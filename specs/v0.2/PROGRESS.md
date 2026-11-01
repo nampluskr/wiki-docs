@@ -6,7 +6,15 @@
 
 ## Phase별 진행
 
-없음.
+### Phase 1 — 지침 갱신
+
+상태: 완료
+
+- **WIKI.md·USECASES.md 갱신** (2026-11-01)
+  - 무엇을 했나: `WIKI.md`를 새 구조로 다시 썼다. 1절 폴더 구조(`wiki/<분야>/{youtube,docs,web}/`, `raw/<분야>/<YYMMDD-소스-title>/`, apps 없음), 2절 원본 폴더 이름 규칙(D-4·D-5), 3절에 "페이지를 둘 소스 폴더"(D-3)와 소스별 index 제목(D-6), 소스 폴더 사이·raw로의 링크 예시를 넣었다. 5절 저장과 6절 inbox 정리에 소스 폴더 고르기, 폴더 이름 바꾸기, 유튜브 폴더 이름(`YYMMDD-youtube-<title>`)을 반영했다. 근거 표기를 `v0.1 D-n`·`v0.2 D-n`으로 나눴다. `USECASES.md`의 UC-4·UC-6·UC-7 경로와 결정 번호를 새 규칙에 맞췄다.
+  - 결과: 두 문서가 v0.2 D-2~D-7을 따른다.
+  - 검증: 두 문서에서 옛 경로 형식(`youtube-<영상ID>`, `wiki/<분야>/<페이지>`, `raw/dev/herdr/`, v0.1 예시 `fft-notes`)을 grep해 0건, `WIKI.md`에서 D-2~D-7의 핵심 규칙 문구 6개가 모두 있는 것을 확인했다.
+  - 특이사항: `WIKI.md` frontmatter 예시의 `raw/dev/261101-docs-herdr/PLANNING.md`는 Phase 2에서 옮긴 뒤에 생긴다.
 
 ## 사용자 요청 작업
 
