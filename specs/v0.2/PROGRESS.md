@@ -155,6 +155,25 @@
 - 검증: PLAN이 R-1~R-8을 모두 대응하는지, SPEC·PLAN의 v0.2 D-n이 DECISIONS에 있는지 확인했다(PLAN의 D-11·D-14는 v0.1 결정).
 - 상태: 완료. SPEC·PLAN 확정 (2026-11-01).
 
+> 아래 두 건은 v0.2 종료 뒤 사용자 지시("이 내용을 적용하고, v0.2 PROGRESS.md에 사용자 요청에 의한 작업 내용을 기록합니다")로 덧붙였다.
+
+### 질문엔 위키 내용만으로 먼저 답하기 (2026-11-01)
+
+- 요청: "claude 스킬에 대해 설명해줘"에 leader가 위키에 일부만 있다고 보고 바로 웹 검색을 하려 하자, 사용자가 막고 "위키에 저장된 내용으로만 먼저 대답하고, 이후에 사용자가 추가적인 내용을 요청하면 그 때 외부 검색해야 합니다", 이어서 "지침에도 반영할 것"을 지시했다.
+- 조치: `WIKI.md` 4절 3·4단계를 "먼저 위키 내용만으로 답하고, 없는 부분은 '위키에 없음'으로 적고, 외부 검색은 추가 요청 때만"으로 고쳤다. `USECASES.md` UC-1에 같은 내용과 끝맺음 안내를, UC-2 시작 조건에 "위키에 전혀 없으면 외부 검색 여부를 묻는다"를 넣었다. 커밋 `7d92a88`.
+- 결과: 질문 흐름이 "위키 답 → (사용자 추가 요청) → 외부 검색"이 됐다.
+- 검증: 4절과 UC-1·UC-2를 다시 읽었다. 이후 다른 레포에서 wiki 스킬 시험(아래)에서 Claude가 위키 내용만으로 답했다.
+- 상태: 완료.
+
+### D:\projects 어디서든 위키 쓰기 — wiki 스킬 (2026-11-01)
+
+- 요청: 위키 작성·사용·지침이 이 워크스페이스뿐 아니라 `D:\projects`와 그 아래 워크스페이스에서도 프롬프트로 동작하게 한다. 데스크탑·노트북에서 같은 내용으로 동작해야 하고(두 곳 모두 `D:\projects\wiki-docs`), 노트북 등록 방법은 레포를 클론하면 확인할 수 있어야 한다.
+- 조치: 사용자가 방식(wiki 스킬 + 상위 AGENTS 한 줄), 대상(claude·codex·agy), 권한(wiki-docs만 쓰기 허용)을 골랐다. 레포 안에 `skills/wiki/SKILL.md`를 만들었다(WIKI.md 어느 절을 읽을지만 안내, 위키 먼저 답하기·확인 후 저장 두 줄). `WIKI.md`에 머리 한 줄과 8절 "다른 워크스페이스에서 쓰기"(새 컴퓨터 설정 PowerShell 절차, 프롬프트 예)를 넣고, 루트 `README.md`를 새로 만들어 클론 → 등록 프롬프트 → 확인 순서를 적었다. 이 데스크탑에는 8절대로 등록했다: `~/.claude/skills/wiki`·`~/.agents/skills/wiki` → `D:\projects\wiki-docs\skills\wiki` Junction, `~/.gemini/config/skills.json`(새로 만듦, `D:/projects/wiki-docs/skills`), `~/.codex/config.toml`의 `[sandbox_workspace_write] writable_roots`, `~/.claude/settings.json`의 `additionalDirectories`, `D:\projects\AGENTS.md`의 "## 위키".
+- 결과: 레포 안 스킬·지침은 git으로 동기화되고, 컴퓨터마다 한 번 등록하면 pull만으로 갱신된다.
+- 검증: Junction 두 개가 레포 폴더를 가리키고, `skills.json`이 BOM 없는 JSON이며, `settings.json`이 JSON으로 읽히는 것을 확인했다. 이 세션에 `wiki` 스킬이 바로 인식됐다. 다른 레포(`D:\projects\youtube-kit`)에서 `claude -p`로 "위키에서 herdr 하위 에이전트 재시작 방법"을 물으니 `wiki/dev/web/herdr-basics.md` 6절을 읽고 위키 내용만으로 답했고 권한 거부는 0건이었다.
+- 특이사항: Git Bash에서 `claude -p "/wiki …"`로 보내면 `/wiki`가 `C:/Program Files/Git/wiki`로 바뀐다(경로 변환). 스킬 설명이 맞아 위키는 찾았다. youtube-kit 자체의 Stop hook(`progress-check.mjs`)이 답 뒤에 PROGRESS 기록을 계속 요구해 반복 출력이 났는데, wiki 스킬과는 관계없는 그 레포 설정이다. **Codex·agy 동작과 Codex `writable_roots`가 Windows `elevated` 샌드박스에서 적용되는지는 사용자가 시험을 멈춰 확인하지 않았다.** 노트북 등록은 사용자가 노트북에서 한다.
+- 상태: 완료(Codex·agy 확인은 남음).
+
 ## 버전 종료
 
 - 사용자 종료 판단: 종료 (2026-11-01). 사용자 지시 "모든 과정을 종료하고 v0.2 마무리". Phase 4 최종 판정 R-1~R-9 충족.

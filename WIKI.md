@@ -3,6 +3,7 @@
 > 에이전트(claude·codex·agy)가 이 저장소에서 위키 작업을 할 때 따르는 지침이다.
 > 근거는 `specs/v0.2/DECISIONS.md`(v0.2 D-n)와 그것이 이어받은 `specs/v0.1/DECISIONS.md`(v0.1 D-n)에, 시나리오 예시는 `USECASES.md`(UC-n)에 있다.
 > 이 지침과 AGENTS.md가 다르면 AGENTS.md를 따르고 사람에게 알린다.
+> 다른 워크스페이스에서 `wiki` 스킬로 불렸을 때도 이 지침을 따른다. 경로는 이 저장소(`D:\projects\wiki-docs`) 기준이다(8절).
 
 ## 1. 폴더 구조 (v0.2 D-2, D-5, D-7, D-10, D-12)
 
@@ -192,3 +193,63 @@ inbox/YYMMDD-youtube-<title>/
 - 작업이 끝나면 커밋한다. 커밋 메시지 예) `wiki: dev/web/rust-gui-frameworks 추가`, `inbox: 261101-web-rust-gui 정리 → raw/web/261101-rust-gui`
 - push는 매번 **"push할까요?"**를 묻고, 사람이 예라고 하면 한다.
 - 작업을 마치면 `specs/<현재 버전>/PROGRESS.md`에 기록한다(AGENTS).
+
+## 8. 다른 워크스페이스에서 쓰기 (wiki 스킬)
+
+`D:\projects`와 그 아래 어느 폴더에서 연 세션이든 "위키에서 찾아줘", "위키에 추가해줘", "inbox 정리해줘"처럼 말하면 `wiki` 스킬이 이 지침으로 안내한다.
+
+- 스킬 원본: 이 저장소의 `skills/wiki/SKILL.md`. 규칙은 이 WIKI.md에만 두고, 스킬은 어느 절을 읽을지만 안내한다.
+- 스킬과 지침은 git으로 동기화된다. 데스크탑·노트북 모두 저장소 경로가 `D:\projects\wiki-docs`이므로 같은 내용으로 동작한다.
+- 다른 폴더에서 불려도 경로는 `D:/projects/wiki-docs/` 기준 절대경로로, git은 `git -C D:/projects/wiki-docs`로 한다. 시작 전에 `status --short`가 비어 있지 않으면(다른 세션이 작업 중일 수 있음) 손대지 않고 묻는다.
+- 호출: Claude·agy는 `/wiki`, Codex는 `$wiki`. 위키를 말하면 스킬 설명이 맞아 자동으로 쓰이기도 한다.
+
+### 새 컴퓨터 설정 (컴퓨터마다 한 번)
+
+스킬을 찾는 폴더, 권한 설정, `D:\projects\AGENTS.md`는 git 밖에 있어서 컴퓨터마다 한 번 등록한다. 저장소를 `D:\projects\wiki-docs`에 받은(`git clone` 또는 `git pull`) 뒤 PowerShell 7에서 실행한다. 이미 된 것은 건너뛴다. 저장소 첫 화면의 `README.md`에도 이 절을 가리키는 안내가 있다.
+
+에이전트에게 맡길 때의 프롬프트 예:
+
+```text
+D:\projects\wiki-docs 를 git pull 하고, WIKI.md 8절 "새 컴퓨터 설정"대로 이 컴퓨터에 wiki 스킬을 등록해줘.
+스크립트는 PowerShell 7로 실행하고, ~/.claude/settings.json 의 additionalDirectories 에 D:\projects\wiki-docs 를 넣어줘.
+끝나면 링크·skills.json·config.toml·AGENTS.md 결과를 보여줘.
+```
+
+직접 실행할 때의 명령:
+
+```powershell
+$repo  = 'D:\projects\wiki-docs'
+$skill = "$repo\skills\wiki"
+
+# 1) Claude·Codex 스킬 폴더에 링크 (관리자 권한 필요 없음)
+foreach ($dir in "$HOME\.claude\skills", "$HOME\.agents\skills") {
+  New-Item -ItemType Directory -Force $dir | Out-Null
+  if (-not (Test-Path "$dir\wiki")) { New-Item -ItemType Junction -Path "$dir\wiki" -Target $skill | Out-Null }
+}
+
+# 2) agy: 링크를 따라가지 않으므로 실제 경로를 skills.json에 등록 (있는 항목은 보존)
+$sj = "$HOME\.gemini\config\skills.json"
+New-Item -ItemType Directory -Force (Split-Path $sj) | Out-Null
+$cfg = if (Test-Path $sj) { Get-Content $sj -Raw | ConvertFrom-Json } else { [pscustomobject]@{ entries = @() } }
+$p = "$repo\skills" -replace '\','/'
+if (-not ($cfg.entries | Where-Object path -eq $p)) { $cfg.entries = @($cfg.entries) + @([pscustomobject]@{ path = $p }) }
+$cfg | ConvertTo-Json -Depth 5 | Set-Content -Encoding utf8NoBOM $sj
+
+# 3) Codex: wiki-docs 쓰기 허용 (블록이 없을 때만 추가)
+$ct = "$HOME\.codex\config.toml"
+if (-not (Select-String -Path $ct -Pattern 'wiki-docs' -Quiet)) {
+  Add-Content -Encoding utf8NoBOM $ct "`n[sandbox_workspace_write]`nwritable_roots = ['D:\projects\wiki-docs']"
+}
+
+# 4) D:\projects\AGENTS.md에 위키 안내 (없을 때만)
+$ag = 'D:\projects\AGENTS.md'
+if (-not (Select-String -Path $ag -Pattern 'wiki 스킬' -Quiet)) {
+  Add-Content -Encoding utf8NoBOM $ag "`n## 위키`n`n- 위키 검색·요약·추가·수정·inbox 정리 요청은 ``wiki`` 스킬로 하고, 규칙은 ``D:\projects\wiki-docs\WIKI.md``를 따른다. 질문엔 위키 내용만으로 먼저 답한다."
+}
+```
+
+5) Claude 쓰기 허용: `~/.claude/settings.json`의 `permissions.additionalDirectories` 목록에 `"D:\projects\wiki-docs"`를 한 줄 넣는다(다른 설정이 많아 직접 고친다).
+
+확인: 각 에이전트를 새로 띄워 Claude·agy는 `/wiki`, Codex는 `$wiki`가 자동완성되는지 본다. `[sandbox_workspace_write]` 블록이 config.toml에 이미 있으면 새로 넣지 말고 그 블록의 `writable_roots`에 경로를 더한다.
+
+이후에는 `git pull`만 하면 스킬과 지침이 갱신된다.
