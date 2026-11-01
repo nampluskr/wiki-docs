@@ -24,7 +24,7 @@
 
 ### Phase 3 — inbox 원본 정리 한 번씩
 
-상태: 진행 중. 사용자 지시("Phase 3 먼저 진행")로 Phase 2보다 먼저 한다(PLAN에 기록).
+상태: 완료 (2026-11-01). 사용자 지시("Phase 3 먼저 진행")로 Phase 2보다 먼저 했다(PLAN에 기록). PLAN 완료 조건(마크다운 폴더 1개 herdr + 유튜브 1개)을 모두 만족한다. inbox에 남은 원본 6개는 PLAN 범위 밖이다.
 
 - **유튜브 원본 inbox에 넣기** (2026-11-01)
   - 무엇을 했나: 사람이 링크(https://youtu.be/pXTD2DJBlDo)와 "둘 다"(자막·요약)를 정했다. 사용자 지시로 `wd-scouter-claude`를 재시작해(`/exit`가 먹지 않아 Ctrl+C 두 번) 새 스킬을 읽게 한 뒤, youtube-batch 스킬로 YouTube 요약을, youtube-kit(`python -m youtube_kit.cli`)으로 메타와 자막을 받게 했다. 자막 트랙은 사람이 "1순위 원본 언어, 2순위 한국어 번역"으로 정해 `auto:ko-orig`를 받았다. 이 규칙을 D-15·R-14·WIKI.md 6절에 넣었다.
