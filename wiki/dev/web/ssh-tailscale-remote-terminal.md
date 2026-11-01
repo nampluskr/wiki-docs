@@ -3,7 +3,7 @@ title: SSH + Tailscale 원격 터미널 (Windows 11 · Android)
 sources:
   - raw/web/261101-ssh-tailscale-remote-terminal-guide/ssh-tailscale-remote-terminal-guide.md
   - specs/v0.2/PROGRESS.md
-updated: 2026-11-01
+updated: 2026-11-02
 tags: [ssh, openssh, tailscale, windows, android, remote]
 status: draft
 ---
@@ -12,7 +12,7 @@ status: draft
 
 집의 Windows 11 PC 두 대(데스크탑·노트북)를 서로 SSH로 접속하고, 밖의 안드로이드 폰·태블릿에서도 두 PC에 접속하는 구성이다. 공유기 포트포워딩 없이 Tailscale 망 위에서 Windows 기본 OpenSSH를 쓰고, **SSH 키로만** 인증한다.
 
-원본은 Microsoft·Tailscale·OpenSSH 공식 문서로 명령을 확인했지만 실제 기기에서는 아직 시험하지 않았다(2026-10 기준). 명령의 `<user>`, `desktop`, `laptop`, `100.x.y.z`, `<tailnet>`은 자리표시자다.
+원본은 Microsoft·Tailscale·OpenSSH 공식 문서로 명령을 확인했다. 2026-11-01~02에 데스크탑·노트북(Windows 11)·안드로이드 폰·태블릿에서 1~7절대로 실제 구성했고, 그때 확인한 사실은 **(확인됨)**으로 표시했다. 집 밖(LTE) 접속, 9·10절은 아직 시험하지 않았다. 명령의 `<user>`, `desktop`, `laptop`, `100.x.y.z`, `<tailnet>`은 자리표시자다.
 
 ## 1. 구성과 순서
 
@@ -40,6 +40,9 @@ status: draft
   - 확인: PC 이름 아래에 **Expiry disabled**가 보인다.
 - 안드로이드: Play 스토어에서 설치 → 같은 계정 로그인 → **Always-on VPN**. 안드로이드는 VPN을 하나만 켤 수 있어서 다른 VPN을 켜면 Tailscale이 꺼진다.
 - 확인: `tailscale status`, `tailscale ip -4`. MagicDNS로 `desktop` 또는 `desktop.<tailnet>.ts.net`으로 접속한다. 관리 콘솔에서 기기 이름을 짧게 바꿔 두면 편하다.
+  - **(확인됨)** 설치 전에 열어 둔 터미널은 `tailscale`을 찾지 못한다(`'tailscale' 용어는 … 인식되지 않습니다`). 설치가 시스템 PATH에 `C:\Program Files\Tailscale\`을 넣으므로 새 창을 열면 된다.
+  - **(확인됨)** 관리 콘솔에서 기기 이름을 바꾸면 MagicDNS 이름도 바로 바뀐다(`book-…` → `laptop`, `z-fold5` → `fold`).
+- **(확인됨)** 안드로이드 Always-on VPN 위치: 설정 앱 검색창에 `VPN` → Tailscale 오른쪽 톱니 → **상시 접속 VPN**(삼성 갤럭시). 같은 화면의 "VPN 없는 연결 차단"은 꺼 둔다. 목록에 Tailscale이 없으면 앱에서 한 번 연결하면 나타난다.
 
 ## 3. OpenSSH 서버 (두 PC, 관리자 PowerShell)
 
@@ -55,6 +58,9 @@ New-ItemProperty -Path 'HKLM:\SOFTWARE\OpenSSH' -Name DefaultShell `
 ```
 
 방화벽 규칙은 없을 때만 `New-NetFirewallRule … -LocalPort 22`로 만든다. PowerShell 7을 기본 셸로 하려면 `pwsh.exe` 실제 경로를 넣는다.
+
+- **(확인됨)** Windows 업데이트 재시작이 걸려 있으면 Server 설치에 재부팅이 필요하다(노트북). 걸려 있지 않으면 `RestartNeeded : False`로 바로 끝난다(데스크탑). Server 설치는 몇 분 걸린다.
+- **(확인됨)** 자동 생성된 방화벽 규칙의 Profile은 `Private`뿐이었고, `Get-NetConnectionProfile`로 보면 Tailscale 어댑터도 `Private`로 잡혀 있어 추가 조치 없이 Tailscale로 접속됐다(두 PC).
 
 ## 4. SSH 키
 
@@ -83,6 +89,21 @@ New-ItemProperty -Path 'HKLM:\SOFTWARE\OpenSSH' -Name DefaultShell `
 - `*S-1-5-18`(SYSTEM), `*S-1-5-32-544`(Administrators)는 SID라 한국어 Windows에서도 그대로 쓴다. 다른 계정·그룹에 쓰기 권한이 남아 있으면 sshd가 키 파일을 무시하므로 `icacls.exe $f /remove <계정>`으로 지운다. 일반 계정 파일은 **접속 대상 계정**으로 실행한다.
 - 관리자 파일은 관리자 그룹 전원이 함께 쓴다. 일상 접속은 일반 계정이 더 안전하다.
 - 확인: `ssh -o PreferredAuthentications=publickey <user>@laptop`. **양방향 모두** 확인한 뒤 6절로 간다.
+- **(확인됨)** 관리자 파일은 **관리자 PowerShell**에서만 만들고 고칠 수 있다. 일반 창에서는 `Access to the path … is denied`가 난다.
+- 접속받는 PC 자신의 공개키는 넣지 않는다. 넣으면 자기 자신으로의 접속만 열릴 뿐, 기기별로 줄을 관리하기 번거로워진다.
+
+### 공개키 옮기기: Taildrop (확인됨)
+
+- PC → PC: 보내는 PC에서 `tailscale file cp "$env:USERPROFILE\.ssh\id_ed25519.pub" laptop:`, 받는 PC에서 `tailscale file get --wait <받을 폴더>`. `--wait` 없이 실행하면 아직 안 온 파일은 받지 않는다(`moved 0/0 files`).
+- 안드로이드 → PC: SSH 앱의 공개키 공유 → Tailscale → 받을 PC. PC의 `Downloads`에 **임의 이름의 `.txt`**, **이름표(주석) 없는 한 줄**로 도착했다. 등록할 때 이름을 붙인다.
+
+  ```powershell
+  # 관리자 PowerShell
+  $f = 'C:\ProgramData\ssh\administrators_authorized_keys'
+  $k = (Get-Content "$env:USERPROFILE\Downloads\<받은 파일>.txt" -Raw).Trim()
+  Add-Content -Encoding ascii -LiteralPath $f -Value "$k phone"
+  icacls.exe $f /inheritance:r /grant:r "*S-1-5-32-544:F" "*S-1-5-18:F"
+  ```
 
 ## 6. 비밀번호 로그인 차단 (두 PC)
 
@@ -94,6 +115,20 @@ New-ItemProperty -Path 'HKLM:\SOFTWARE\OpenSSH' -Name DefaultShell `
 2. `& "$env:WINDIR\System32\OpenSSH\sshd.exe" -t`(출력 없으면 정상) → `Restart-Service sshd`.
 3. **새 연결**로 확인한다(기존 세션은 닫지 않는다). `ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password <user>@laptop`이 비밀번호를 묻지 않고 `Permission denied (publickey)`로 끝나야 한다.
 
+**(확인됨)** 기본 `sshd_config`에서는 `#PubkeyAuthentication yes`(34행), `#PasswordAuthentication yes`(51행)가 이미 `Match` 블록(87행)보다 위에 있어서, 1단계를 주석만 바꾸는 명령으로 할 수 있었다(두 PC 같음).
+
+```powershell
+# 관리자 PowerShell
+$c = 'C:\ProgramData\ssh\sshd_config'
+Copy-Item $c "$c.bak"
+(Get-Content $c) -replace '^#PubkeyAuthentication yes$','PubkeyAuthentication yes' -replace '^#PasswordAuthentication yes$','PasswordAuthentication no' | Set-Content -Encoding ascii $c
+Select-String -Path $c -Pattern 'PasswordAuthentication|PubkeyAuthentication|^Match'   # Pubkey yes, Password no, Match 순서
+& "$env:WINDIR\System32\OpenSSH\sshd.exe" -t
+Restart-Service sshd
+```
+
+**(확인됨)** 3단계의 실제 메시지는 `Permission denied (publickey,keyboard-interactive)`였다. 서버가 `keyboard-interactive`를 계속 내걸지만 `ssh -v`로 보면 비밀번호 질의가 오지 않아 비밀번호로는 들어갈 수 없다. 되돌릴 때는 `Copy-Item "$c.bak" $c -Force; Restart-Service sshd`.
+
 ## 7. 안드로이드 앱
 
 | 앱 | 가격 | 추천 대상 |
@@ -103,6 +138,8 @@ New-ItemProperty -Path 'HKLM:\SOFTWARE\OpenSSH' -Name DefaultShell `
 | Termux | 무료, 오픈소스 | 명령행에 익숙한 사람. `pkg install openssh` 후 PC와 같은 `ssh-keygen`·`~/.ssh/config` |
 
 JuiceSSH는 Play 스토어에서 확인되지 않아 새로 설치하지 않는다. 앱 메뉴 이름·키 형식은 버전마다 다르니 직접 확인한다.
+
+**(확인됨)** Termius(폰·태블릿): Keychain에서 Ed25519 키 생성 → 공개키 공유로 Taildrop 전송(5절) → 데스크탑에 등록 → Hosts에 `desktop`·22·사용자·키를 넣고 접속했다. 배터리 설정에서 Tailscale을 "제한 없음"으로 둔다.
 
 ## 8. 접속
 
@@ -119,7 +156,7 @@ Host laptop
 ```
 
 - 이제 `ssh laptop`. `IdentitiesOnly yes`는 엉뚱한 키로 시도하다 실패하는 것을 막는다.
-- **첫 접속의 호스트 키 지문**은 접속받는 PC의 `ssh-keygen -lf C:\ProgramData\ssh\ssh_host_ed25519_key.pub`와 대조한 뒤 `yes`. 나중에 지문이 바뀌었다는 경고가 뜨면 접속하지 말고 원인부터 확인한다.
+- **첫 접속의 호스트 키 지문**은 접속받는 PC의 `ssh-keygen -lf C:\ProgramData\ssh\ssh_host_ed25519_key.pub`와 대조한 뒤 `yes`. 나중에 지문이 바뀌었다는 경고가 뜨면 접속하지 말고 원인부터 확인한다. **(확인됨)** 이 지문 명령은 일반 창에서 `Permission denied`가 나므로 관리자 PowerShell에서 실행한다.
 - 집 밖 시험: 폰 Wi-Fi를 끄고 LTE로 두 PC에 접속해 본다. PC 재부팅·로그아웃 뒤에도 한 번씩.
 
 ## 9. 연결 유지와 전원
@@ -144,10 +181,13 @@ Host laptop
 | 재부팅·로그아웃 뒤 안 됨 | Run unattended, sshd 자동 시작, 키 만료 |
 | 몇 달 뒤 갑자기 안 됨 | Tailscale 키 만료 |
 | 자주 끊긴다 | keepalive, 안드로이드 배터리 제한. `tailscale status`의 relay 표시는 고장이 아니다 |
+| `'tailscale' 용어는 … 인식되지 않습니다` | 설치 전에 연 터미널이다. 새 창을 연다 (확인됨) |
+| `Could not resolve hostname … \276\313…` | 호스트 이름 오타(예: `destop`). 뒤의 깨진 글자는 한국어 오류 메시지의 인코딩 문제다 (확인됨) |
+| 키 파일·지문 명령에서 `Access … denied` / `Permission denied` | 관리자 PowerShell이 아닌 창이다 (확인됨) |
 
 - 클라이언트 로그: `ssh -vvv <user>@laptop`. 서버는 PC 앞에서 `Stop-Service sshd` → `sshd.exe -d`(연결 하나 처리 후 종료) → `Start-Service sshd`. 로그 파일은 `sshd_config`에 `SyslogFacility LOCAL0`, `LogLevel DEBUG3`를 넣으면 `C:\ProgramData\ssh\logs\sshd.log`에 쌓인다(확인 후 지운다).
 - Tailscale: `tailscale ping laptop`으로 닿는지, direct인지 relay인지 본다.
-- 원본이 확정하지 못한 것: Tailscale 네트워크가 방화벽의 어느 프로필에 속하는지(`Get-NetConnectionProfile`), Windows 빌드별 OpenSSH 버전(`ssh -V`), 앱 메뉴 이름, 제조사별 배터리 메뉴.
+- 원본이 확정하지 못한 것: Windows 빌드별 OpenSSH 버전(`ssh -V`), 앱 메뉴 이름, 제조사별 배터리 메뉴.
 
 ## 원본
 
