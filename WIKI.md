@@ -43,7 +43,7 @@ status: draft
 ---
 ```
 
-- `sources`: 문자열 목록. `raw/` 경로는 그대로, URL은 뒤에 ` (YYYY-MM-DD)` 확인 날짜를 붙인다. 유튜브 원본은 `raw/` 폴더 경로를 적는다. 내용이 있는 페이지의 `sources`는 비우지 않는다.
+- `sources`: 문자열 목록. `raw/` 경로는 그대로, URL은 뒤에 ` (YYYY-MM-DD)` 확인 날짜를 붙인다. 유튜브 원본은 `raw/` 폴더 경로를 적는다. 직접 겪은 일을 적을 때는 그 일을 기록한 저장소 안 문서(예: `specs/v0.1/PROGRESS.md`)의 경로를 적는다. 내용이 있는 페이지의 `sources`는 비우지 않는다.
 - `updated`: 마지막으로 내용을 고친 날짜.
 - `status`: 새 페이지는 `draft`. `stable`로는 사람이 지시할 때만 바꾼다. (UC-8)
 

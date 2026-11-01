@@ -90,7 +90,7 @@ D-3 · D-15 · D-16
 
 **요구**
 
-`index.md`를 뺀 모든 위키 페이지는 `title`, `sources`, `updated`, `tags`, `status`를 둔다. `sources`는 문자열 목록이고, 원본의 `raw/` 경로를 그대로 적거나 외부 검색 자료의 URL 뒤에 ` (YYYY-MM-DD)` 확인 날짜를 붙여 적는다. 새 페이지는 `draft`이고, `stable`은 사용자 지시로만 바뀐다.
+`index.md`를 뺀 모든 위키 페이지는 `title`, `sources`, `updated`, `tags`, `status`를 둔다. `sources`는 문자열 목록이고, 원본의 `raw/` 경로를 그대로 적거나, 외부 검색 자료의 URL 뒤에 ` (YYYY-MM-DD)` 확인 날짜를 붙여 적거나, 직접 겪은 일을 기록한 저장소 안 문서의 경로를 적는다. 새 페이지는 `draft`이고, `stable`은 사용자 지시로만 바뀐다.
 
 **정해진 결과**
 
