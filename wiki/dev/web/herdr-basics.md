@@ -1,10 +1,10 @@
 ---
 title: Herdr 기본 — 구조, 상태, 명령
 sources:
-  - raw/dev/web/261101-web-herdr/README.md
-  - raw/dev/web/261101-web-herdr/BUILDING.md
-  - raw/dev/web/261101-web-herdr/OPERATING.md
-  - raw/dev/web/261101-web-herdr/herdr-multi-agent-guide.md
+  - raw/web/261101-herdr/README.md
+  - raw/web/261101-herdr/BUILDING.md
+  - raw/web/261101-herdr/OPERATING.md
+  - raw/web/261101-herdr/herdr-multi-agent-guide.md
   - https://code.claude.com/docs/en/interactive-mode (2026-11-01)
   - https://wmedia.es/en/tips/claude-code-how-to-quit-session (2026-11-01)
   - https://www.octavehq.com/post/claude-code-cli-cheatsheet-essential-commands (2026-11-01)

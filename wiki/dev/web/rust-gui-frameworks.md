@@ -1,15 +1,15 @@
 ---
 title: Rust GUI 프레임워크 — 설치와 선택 (Windows 11)
 sources:
-  - raw/dev/web/261101-web-rust-gui/README.md
-  - raw/dev/web/261101-web-rust-gui/01-INSTALL.md
-  - raw/dev/web/261101-web-rust-gui/02-GPUI.md
-  - raw/dev/web/261101-web-rust-gui/03-EGUI.md
-  - raw/dev/web/261101-web-rust-gui/04-ICED.md
-  - raw/dev/web/261101-web-rust-gui/05-SLINT.md
-  - raw/dev/web/261101-web-rust-gui/06-TAURI.md
-  - raw/dev/web/261101-web-rust-gui/07-DIOXUS.md
-  - raw/dev/web/261101-web-rust-gui/08-COMPARISON.md
+  - raw/web/261101-rust-gui/README.md
+  - raw/web/261101-rust-gui/01-INSTALL.md
+  - raw/web/261101-rust-gui/02-GPUI.md
+  - raw/web/261101-rust-gui/03-EGUI.md
+  - raw/web/261101-rust-gui/04-ICED.md
+  - raw/web/261101-rust-gui/05-SLINT.md
+  - raw/web/261101-rust-gui/06-TAURI.md
+  - raw/web/261101-rust-gui/07-DIOXUS.md
+  - raw/web/261101-rust-gui/08-COMPARISON.md
 updated: 2026-11-01
 tags: [rust, gui, windows, gpui, egui, iced, slint, tauri, dioxus]
 status: draft
@@ -124,4 +124,4 @@ Zed 같은 앱이 목표일 때 권장 순서: gpui-kit Hello World → gpui-kit
 
 ## 원본
 
-원본 묶음의 입구는 [README](../../../raw/dev/web/261101-web-rust-gui/README.md)이고, 프레임워크별 설치·예제 코드는 각 파일(예: [02-GPUI](../../../raw/dev/web/261101-web-rust-gui/02-GPUI.md))에 있다. 공식 문서 링크는 [08-COMPARISON](../../../raw/dev/web/261101-web-rust-gui/08-COMPARISON.md) 4.2절에 모여 있다.
+원본 묶음의 입구는 [README](../../../raw/web/261101-rust-gui/README.md)이고, 프레임워크별 설치·예제 코드는 각 파일(예: [02-GPUI](../../../raw/web/261101-rust-gui/02-GPUI.md))에 있다. 공식 문서 링크는 [08-COMPARISON](../../../raw/web/261101-rust-gui/08-COMPARISON.md) 4.2절에 모여 있다.

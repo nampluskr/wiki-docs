@@ -69,6 +69,44 @@
   - 검증: R-1 `wiki/dev/`에 index와 `web/`·`youtube/`만. R-2 web 5개=[web], youtube 1개=[youtube]. R-3 `raw/dev/`에 `web/`·`youtube/`만, 원본 폴더 이름의 소스가 소스 폴더와 같음, inbox는 `.gitkeep`뿐. R-4 원본 21개 모두 R100(페이지 4개는 링크 수정으로 R092~R098). R-5 index 제목 2개, 링크와 폴더 목록 일치. R-6 링크·`sources` 깨짐 0. WIKI.md·USECASES.md·`wiki/`에 `docs` 소스 잔여 0(외부 URL·`docs/HERDR-*` 같은 원본 속 경로 제외).
   - 특이사항: D-9를 먼저 `youtube·docs`로 썼다가 커밋 전에 `youtube·web`으로 고쳤다. "웹 정보 문서 원본은 raw/web에 둔다"가 v0.1 D-4("외부 검색 자료는 raw에 두지 않는다")와 부딪혀, 질문 중 웹 검색은 그대로 URL만 남긴다고 D-10에 나눠 적었다.
 
+### Phase 4 재판정 (Phase 5 이후)
+
+상태: 진행 중 (사람 판단 대기)
+
+- **R-1~R-8과 이어받은 v0.1 요구 재판정** (2026-11-01)
+
+  | 요구 | 판정 | 근거 |
+  | --- | --- | --- |
+  | R-1 구조, 빈 폴더·apps 없음 | 충족 | `wiki/`에 `dev/`만, `wiki/dev/`에 `index.md`·`web/`(5)·`youtube/`(1), 소스 폴더에 index 없음 |
+  | R-2 소스와 위치 일치 | 충족 | web 5개=[web], youtube 1개=[youtube] |
+  | R-3 원본 폴더 이름, raw 분야/소스 | 충족 | `raw/`에 `dev/`만, `raw/dev/`에 `web/`·`youtube/`만, 원본 5개 이름의 소스가 소스 폴더와 같음, inbox는 `.gitkeep`뿐 |
+  | R-4 원본 파일 불변 | 충족 | raw 21개 파일 모두 처음 추가된 blob 해시와 HEAD 해시가 같다. 첫 점검 스크립트가 README.md 2개를 "변경"으로 걸었으나, 같은 커밋의 다른 README.md와 비교한 오탐이었다 |
+  | R-5 소스별 index | 충족 | `## youtube`·`## web` 아래 링크와 폴더 목록 일치, `wiki/index.md`와 분야 목록 일치 |
+  | R-6 링크·sources | 충족 | 깨짐 0, `[[` 없음 |
+  | R-7 남은 원본 정리 | 충족 | inbox 비어 있음, 세 원본이 `raw/dev/web/`에 있고 `wiki/dev/web/` 페이지가 가리킴 |
+  | R-8 WIKI.md·USECASES.md | 충족 | 옛 경로 형식·`docs` 소스 잔여 0 |
+  | 이어받은 v0.1 요구 | 충족 | frontmatter 다섯 항목·`status: draft`, URL 확인 날짜, 이름 규칙, 영상·음성 파일 없음, 병합 커밋 없음 |
+
+  - 검증: 스크립트로 확인하고, R-4는 `git log --follow --raw`의 추가 시점 blob과 `git rev-parse HEAD:<파일>`을 21개 모두 비교했다. 판정 직전 push(`f9aacb8`)로 로컬=원격.
+  - 결과: R-1~R-8 충족, 미충족 없음.
+  - 남은 판단: 버전 종료 여부. 사용자가 "종료"를 골랐으나, 종료 기록 전에 유튜브 페이지 질문과 수정 지시가 와서 Phase 6을 했다. 이 판정은 Phase 6 이전 기준이다.
+
+### Phase 6 — 유튜브 페이지 양식과 raw 폴더 규칙
+
+상태: 완료
+
+- **유튜브 페이지 영상별 섹션 (D-11)** (2026-11-01)
+  - 무엇을 했나: 사용자가 "유튜브는 동영상 1개마다 1개의 문서인가"를 물어, 원본은 1:1이고 페이지는 주제 단위라고 답했다. 사용자가 "지금 규칙 그대로 적용"하고 "섹션별로 유튜브 등록일이 포함되고 최신 정보 순"을 지시했다. 섹션 단위("영상별 섹션"), 내용 충돌("둘 다 두고 최신에 표시"), 버전("v0.2에 추가")을 물어 D-11·R-9를 쓰고, WIKI.md 3절에 "유튜브 페이지 양식", 5·6절과 USECASES UC-4·UC-7에 영상 섹션 규칙을 넣었다. `wiki/dev/youtube/claude-skill-writing-rules.md`를 요약 → `## 점검 목록 (최신 기준)` → `## 2026-10-31 · 앤트로픽 피셜…`(채널·길이·URL·raw 링크, 기존 절을 `###`로) 순서로 재배치했다.
+  - 결과: 유튜브 페이지가 영상별 섹션 양식이다.
+  - 검증: R-9 스크립트로 섹션 날짜가 내림차순이고 `meta.json`의 `upload_date`(20261031)와 같음을 확인했다. `git diff --word-diff`로 바뀐 것이 제목 단계, 맨 위 요약 줄, 영상 정보 줄뿐이고 규칙 본문 문장은 그대로임을 확인했다.
+  - 특이사항: 영상이 하나뿐이라 "영상과 다름" 표시와 섹션 정렬은 실제로 여러 영상에서 확인하지 못했다.
+
+- **inbox·raw 폴더 규칙 (D-12)** (2026-11-01)
+  - 무엇을 했나: 사용자 지시 "inbox: YYYYMMDD-{소스}-{title-in-english}, raw: raw\{소스}\YYYMMDD-{title-in-english}"로 원본을 `raw/{소스}/20261101-…`로 옮기다가, "날짜 접두사를 YYMMDD로 유지" 지시로 `raw/{소스}/261101-{title}/`로 고쳤다. raw는 분야로 나누지 않고, 폴더 이름에서 `-{소스}`를 뺐다(`raw/dev/web/261101-web-herdr/` → `raw/web/261101-herdr/` 등 5개). 페이지 `sources`·raw 링크, WIKI.md(1·2·3·6·7절), USECASES(UC-6·UC-7), DECISIONS(D-12, D-1 표, D-5·D-8·D-9 개정 표시), SPEC R-3, PLAN Phase 6, INTENT 범위를 고쳤다.
+  - 결과: `raw/`에 `web/`(4)·`youtube/`(1)만 있다.
+  - 검증: R-3 `raw/` 바로 아래가 `web/`·`youtube/`뿐이고 그 아래 이름이 `^[0-9]{6}-[a-z0-9-]+$`. R-4 커밋 전 `git diff --cached -M`에서 raw 21개 모두 R100. R-6 링크·`sources` 깨짐 0. R-8 WIKI.md·USECASES.md에 `raw/<분야>`·`raw/dev` 잔여 0(`261101-web-…`은 inbox 이름 예시라 맞음).
+  - 특이사항: `YYYMMDD`는 오타로 보고, title은 kebab-case로 유지했다. 커밋된 이력 기준 blob 비교 스크립트는 커밋 전 새 경로를 따라가지 못해 21개를 모두 "다름"으로 냈고, rename 판정(R100)으로 대신 확인했다.
+
 ## 사용자 요청 작업
 
 ### v0.2 버전 INTENT 작성 (2026-11-01)

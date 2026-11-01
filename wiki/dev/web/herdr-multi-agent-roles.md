@@ -1,12 +1,12 @@
 ---
 title: Herdr 멀티 에이전트 — 역할과 구성
 sources:
-  - raw/dev/web/261101-web-herdr/README.md
-  - raw/dev/web/261101-web-herdr/PLANNING.md
-  - raw/dev/web/261101-web-herdr/BUILDING.md
-  - raw/dev/web/261101-web-herdr/OPERATING.md
-  - raw/dev/web/261101-web-herdr/TEMPLATE-SETUP.md
-  - raw/dev/web/261101-web-herdr/TEMPLATE-DECISIONS.md
+  - raw/web/261101-herdr/README.md
+  - raw/web/261101-herdr/PLANNING.md
+  - raw/web/261101-herdr/BUILDING.md
+  - raw/web/261101-herdr/OPERATING.md
+  - raw/web/261101-herdr/TEMPLATE-SETUP.md
+  - raw/web/261101-herdr/TEMPLATE-DECISIONS.md
 updated: 2026-11-01
 tags: [herdr, multi-agent, leader, token, claude, codex, agy]
 status: draft
@@ -106,7 +106,7 @@ leader는 탭·패널·에이전트를 만들기 전에 프로젝트의 `docs/HE
 3. 사람이 명시적으로 승인하면 상태를 `승인됨 (날짜)`로 바꾸고 구축한다.
 4. 구축 뒤 `herdr agent list`를 구성안과 대조해 보고한다.
 
-에이전트 추가·교체, 모델 변경, 워크스페이스 추가는 구성안을 고쳐 다시 승인받는다. 멈춘 에이전트를 같은 설정으로 다시 띄우는 것은 승인된 구성 안의 일이다. 구성안 템플릿: [TEMPLATE-SETUP](../../../raw/dev/web/261101-web-herdr/TEMPLATE-SETUP.md)
+에이전트 추가·교체, 모델 변경, 워크스페이스 추가는 구성안을 고쳐 다시 승인받는다. 멈춘 에이전트를 같은 설정으로 다시 띄우는 것은 승인된 구성 안의 일이다. 구성안 템플릿: [TEMPLATE-SETUP](../../../raw/web/261101-herdr/TEMPLATE-SETUP.md)
 
 ## 7. 대리 응답과 기록
 
@@ -117,7 +117,7 @@ leader는 탭·패널·에이전트를 만들기 전에 프로젝트의 `docs/HE
 | 정한 방향 안의 세부 선택(이름, 순서) | 외부 전송(push·메일·업로드), 비용이 드는 작업 |
 | | 승인된 구성과 달라지는 일, 근거를 댈 수 없는 판단 |
 
-답하거나 조치할 때마다 `docs/HERDR-DECISIONS.md`에 번호(`D-001`…)를 붙여 바로 기록한다. 대리 응답, 사람에게 올린 건, 구성 안의 조치(재시작 등)를 모두 적고, 이전 기록은 고치지 않고 새 번호로 바로잡는다. 기록 템플릿: [TEMPLATE-DECISIONS](../../../raw/dev/web/261101-web-herdr/TEMPLATE-DECISIONS.md)
+답하거나 조치할 때마다 `docs/HERDR-DECISIONS.md`에 번호(`D-001`…)를 붙여 바로 기록한다. 대리 응답, 사람에게 올린 건, 구성 안의 조치(재시작 등)를 모두 적고, 이전 기록은 고치지 않고 새 번호로 바로잡는다. 기록 템플릿: [TEMPLATE-DECISIONS](../../../raw/web/261101-herdr/TEMPLATE-DECISIONS.md)
 
 ## 8. 여러 워크스페이스
 

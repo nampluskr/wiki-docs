@@ -1,7 +1,7 @@
 ---
 title: ego lite — 코딩 에이전트용 브라우저 (Claude Code · Codex · agy)
 sources:
-  - raw/dev/web/261101-web-ego-lite-guide/ego-lite-guide.md
+  - raw/web/261101-ego-lite-guide/ego-lite-guide.md
 updated: 2026-11-01
 tags: [ego-lite, ego-browser, browser-automation, claude-code, codex, agy, windows]
 status: draft

@@ -1,7 +1,7 @@
 ---
 title: SSH + Tailscale 원격 터미널 (Windows 11 · Android)
 sources:
-  - raw/dev/web/261101-web-ssh-tailscale-remote-terminal-guide/ssh-tailscale-remote-terminal-guide.md
+  - raw/web/261101-ssh-tailscale-remote-terminal-guide/ssh-tailscale-remote-terminal-guide.md
 updated: 2026-11-01
 tags: [ssh, openssh, tailscale, windows, android, remote]
 status: draft
@@ -146,4 +146,4 @@ Host laptop
 
 ## 원본
 
-명령 모음과 기기별 설정 점검표, 공식 문서 링크 전체는 [원본](../../../raw/dev/web/261101-web-ssh-tailscale-remote-terminal-guide/ssh-tailscale-remote-terminal-guide.md) 12절에 있다.
+명령 모음과 기기별 설정 점검표, 공식 문서 링크 전체는 [원본](../../../raw/web/261101-ssh-tailscale-remote-terminal-guide/ssh-tailscale-remote-terminal-guide.md) 12절에 있다.
