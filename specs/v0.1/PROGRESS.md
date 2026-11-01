@@ -33,6 +33,13 @@
   - 특이사항: 자막을 지시하기 전에 scouter 창 입력칸에 보내지 않은 글("ko-orig 자막을 srt로 받아 줘")이 남아 있었고, leader가 보낸 Esc·Ctrl+U·Ctrl+C·Enter가 먹지 않았다. 사용자가 창에서 직접 보내 자막을 받았다. 여러 에이전트 분담은 버전 INTENT 제외 범위였지만 사용자 지시로 했다.
   - 남은 것: 유튜브 원본의 분야 정하기와 위키 페이지 정리, raw/ 이동. 노트북의 마크다운 폴더(사람이 push 후 알려 줌).
 
+- **herdr·유튜브 원본 정리 → 첫 분야 dev** (2026-11-01)
+  - 무엇을 했나: 노트북에서 push한 원본 7개 폴더를 pull했다. 사람이 분야를 `apps`·`dev` 두 개로 정했고(D-20), herdr와 유튜브를 먼저 leader가 정리하기로 했다. leader가 `inbox/herdr/` 7개 파일과 유튜브 `summary.md`·자막을 모두 읽고 `wiki/dev/`에 페이지 3개를 썼다: `herdr-basics.md`(구조·상태·명령·문제 해결), `herdr-multi-agent-roles.md`(원칙·역할·모델·작업 유형·구성안·대리 응답), `claude-skill-writing-rules.md`(7가지 규칙과 점검 목록). `wiki/dev/index.md`를 만들고 `wiki/index.md`에 dev를 넣었다. 원본 두 폴더를 `git mv`로 `raw/dev/`에 옮겼다.
+  - 결과: 첫 분야 `wiki/dev/`에 페이지 3개. `raw/dev/herdr/`, `raw/dev/youtube-pXTD2DJBlDo/`. 템플릿 2개는 페이지로 옮기지 않고 raw 파일로 링크했다.
+  - 검증: 페이지의 상대 링크와 `sources`의 raw 경로가 모두 실제 파일을 가리키는지 스크립트로 확인했다(깨짐 0). `wiki/`에 `[[`가 없고, `wiki/dev/` 파일 이름이 `[a-z0-9-]`만 쓴다. `git diff --cached -M`에서 옮긴 원본 10개가 모두 R100(내용 그대로)이다. 분야 index와 페이지 목록이 같다.
+  - 특이사항: 처음에 셸 작업 폴더가 `inbox/youtube-pXTD2DJBlDo/` 안이라 그 폴더의 `git mv`가 Permission denied로 실패했고, 작업 폴더가 바뀐 뒤 다시 옮겼다. `raw/dev/herdr/herdr-multi-agent-guide.md`는 원래 위치 기준 링크(`herdr/README.md`)라 raw 안에서 깨지지만 원본이라 고치지 않았다. 유튜브 페이지는 영상 자막·요약만 근거로 했고 Anthropic 공식 문서는 확인하지 않았다고 페이지에 적었다. R-10(기존 페이지 보태기)은 기존 페이지가 없어 이번에도 일어나지 않았다.
+  - 남은 것: `apps` 원본 4개(rust-gui, rust-video-player, rust-video-player-native, zed-like-editor)와 `dev` 원본 2개(ego-lite-guide, ssh-tailscale-remote-terminal-guide).
+
 ## 사용자 요청 작업
 
 ### herdr scout-trio 환경 구성 (2026-11-01)
