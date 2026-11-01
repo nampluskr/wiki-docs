@@ -6,7 +6,21 @@
 
 ## Phase별 진행
 
-없음.
+### Phase 1 — 뼈대와 지침
+
+상태: 완료
+
+- **WIKI.md 작성** (2026-11-01)
+  - 무엇을 했나: 루트 `WIKI.md`에 폴더 구조, 이름 규칙, 페이지 양식(frontmatter·링크·수식·목차), 질문에 답하기, 위키에 저장하기, inbox 원본 정리(유튜브 포함), 커밋과 동기화를 7개 절로 썼다. 절마다 근거 D-n·R-n·UC-n을 달았다.
+  - 결과: R-1~R-10·R-13·R-14의 규칙과 UC-1~UC-9의 절차가 `WIKI.md`에 있다.
+  - 검증: `WIKI.md`에서 R-1~R-10·R-13·R-14와 UC-1~UC-9 번호를 하나씩 grep해 빠진 것이 없음을 확인했다.
+  - 특이사항: youtube-kit은 `Scripts\youtube-kit.exe`가 아니라 `python -m youtube_kit.cli`로 부르도록 적었다. exe가 종료 코드 9009로 실행되지 않았기 때문이다. cpu 환경에서 `python -m youtube_kit.cli --help`가 동작하는 것만 확인했고, 실제 자막 받기는 Phase 3에서 확인한다.
+
+- **뼈대 생성과 AGENTS 연결** (2026-11-01)
+  - 무엇을 했나: `AGENTS.md`에 "위키 작업은 WIKI.md를 따른다" 줄을 넣고, `wiki/index.md`(분야 목록 비어 있음), `inbox/.gitkeep`, `raw/.gitkeep`을 만들었다.
+  - 결과: PLAN Phase 1 완료 조건(WIKI.md, AGENTS 줄, wiki/index.md, .gitkeep 둘, .gitignore의 `.serena/`, 커밋)을 모두 만족한다.
+  - 검증: `find wiki inbox raw -type f`로 세 파일, `AGENTS.md` 내용, `.gitignore`의 `.serena/`를 확인했다.
+  - 특이사항: 없음.
 
 ## 사용자 요청 작업
 
