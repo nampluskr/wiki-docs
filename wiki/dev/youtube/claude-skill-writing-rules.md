@@ -1,7 +1,7 @@
 ---
 title: Claude 스킬 작성 규칙 7가지
 sources:
-  - raw/dev/youtube-pXTD2DJBlDo
+  - raw/dev/261101-youtube-claude-skill-writing-rules
   - https://youtu.be/pXTD2DJBlDo (2026-11-01)
 updated: 2026-11-01
 tags: [claude, skill, agent, prompt, anthropic]
@@ -86,4 +86,4 @@ Claude는 스킬 안의 긴 참고 파일을 열 때 끝까지 읽지 않고 앞
 
 ## 관련 페이지
 
-- [Herdr 기본](herdr-basics.md) — 에이전트에 스킬(herdr 스킬 등)을 설치해 쓰는 환경
+- [Herdr 기본](../web/herdr-basics.md) — 에이전트에 스킬(herdr 스킬 등)을 설치해 쓰는 환경

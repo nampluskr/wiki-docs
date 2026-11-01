@@ -16,6 +16,16 @@
   - 검증: 두 문서에서 옛 경로 형식(`youtube-<영상ID>`, `wiki/<분야>/<페이지>`, `raw/dev/herdr/`, v0.1 예시 `fft-notes`)을 grep해 0건, `WIKI.md`에서 D-2~D-7의 핵심 규칙 문구 6개가 모두 있는 것을 확인했다.
   - 특이사항: `WIKI.md` frontmatter 예시의 `raw/dev/261101-docs-herdr/PLANNING.md`는 Phase 2에서 옮긴 뒤에 생긴다.
 
+### Phase 2 — 기존 페이지·원본 옮기기
+
+상태: 완료
+
+- **D-8 표대로 옮기기** (2026-11-01)
+  - 무엇을 했나: `git mv`로 원본 2개(`raw/dev/herdr/` → `raw/dev/261101-docs-herdr/`, `raw/dev/youtube-pXTD2DJBlDo/` → `raw/dev/261101-youtube-claude-skill-writing-rules/`)와 페이지 3개(`herdr-basics` → `web/`, `herdr-multi-agent-roles` → `docs/`, `claude-skill-writing-rules` → `youtube/`)를 옮겼다. 페이지의 `sources` raw 경로, 페이지끼리의 링크(`../web/…`, `../docs/…`, `../youtube/…`), raw로의 링크(`../../../raw/…`)를 고쳤다. `wiki/dev/index.md`를 `## youtube`·`## docs`·`## web` 제목으로 다시 썼다.
+  - 결과: `wiki/dev/`에 `index.md`와 소스 폴더 3개(각 페이지 1개), `raw/dev/`에 새 이름의 원본 2개.
+  - 검증: R-1 `wiki/dev/` 바로 아래가 `index.md`와 소스 폴더뿐, 소스 폴더마다 페이지 1개. R-2 페이지별 `sources` 종류가 youtube=[youtube], docs=[docs], web=[docs, web]으로 폴더와 맞음. R-3 `raw/dev/` 폴더 이름 2개가 규칙에 맞음. R-4 `git diff --cached -M`에서 원본 10개 모두 R100(페이지 3개는 링크를 고쳐 R093~R097). R-5 소스별 제목 아래 링크와 폴더 목록이 셋 다 일치. R-6 상대 링크·`sources` 경로 깨짐 0.
+  - 특이사항: inbox의 원본 3개는 아직 옛 이름이다(Phase 3에서 바꾼다). `specs/v0.1/` 문서 안의 옛 경로는 지난 버전이라 고치지 않았다.
+
 ## 사용자 요청 작업
 
 ### v0.2 버전 INTENT 작성 (2026-11-01)
