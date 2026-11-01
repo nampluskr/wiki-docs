@@ -18,6 +18,14 @@
 - 검증: `git status`로 지워진 파일이 rust-video-player·rust-video-player-native·zed-like-editor 아래뿐이고, inbox에 rust-gui·ego-lite-guide·ssh-tailscale이 남은 것을 확인했다.
 - 상태: 완료. 다음은 `DECISIONS.md`.
 
+### .gitkeep 삭제 (2026-11-01)
+
+- 요청: 로컬에서 지워진 `raw/.gitkeep`, `specs/v0.1/.gitkeep`에 대해 사용자가 "파일이 존재하므로 gitkeep 불필요"라고 했다.
+- 조치: 두 파일의 삭제를 커밋했다. `specs/v0.1/`은 지난 버전 폴더라 고치지 않는 것이 AGENTS 규칙이지만, 사람이 정한 것이고 문서 내용은 바뀌지 않는다. `inbox/.gitkeep`은 남겼다.
+- 결과: `raw/`(dev/ 있음), `specs/v0.1/`(문서 5개 있음)은 파일이 있어 폴더가 그대로 남는다.
+- 검증: `git status`로 두 파일 삭제만 남은 것을 확인했다.
+- 상태: 완료.
+
 ## 버전 종료
 
 - 사용자 종료 판단: 진행 중.
