@@ -26,6 +26,14 @@
 - 검증: `git status`로 두 파일 삭제만 남은 것을 확인했다.
 - 상태: 완료.
 
+### v0.2 DECISIONS 확정, SPEC·PLAN 초안 (2026-11-01)
+
+- 요청: push 후 DECISIONS 진행. 확정하면서 SPEC·PLAN도 같이 쓴다.
+- 조치: 날짜(inbox에 넣은 날), raw 위치(`raw/<분야>/<이름>/`), title(넣는 사람이, 없으면 에이전트), 유튜브 title(영상 제목 영문 요약), 나중에 섞일 때(web으로 옮김), index(분야 index 하나에 소스별 제목), 지금 원본·페이지의 새 이름(제안대로)을 사람에게 물어 D-1~D-8로 쓰고 확정받았다. SPEC R-1~R-8, PLAN Phase 1~4 초안을 썼다.
+- 결과: `specs/v0.2/DECISIONS.md` 확정, `SPEC.md`·`PLAN.md` 초안.
+- 검증: PLAN이 R-1~R-8을 모두 대응하는지, SPEC·PLAN의 v0.2 D-n이 DECISIONS에 있는지 확인했다(PLAN의 D-11·D-14는 v0.1 결정).
+- 상태: SPEC·PLAN 사람 확인 대기.
+
 ## 버전 종료
 
 - 사용자 종료 판단: 진행 중.
