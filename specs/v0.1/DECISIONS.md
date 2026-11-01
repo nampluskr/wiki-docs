@@ -338,6 +338,33 @@ claude·codex·agy는 각자의 기본 웹 검색을 쓴다. 로그인이 필요
 
 ---
 
+## D-20. 첫 분야는 apps와 dev 두 개로 한다
+
+**선택**
+
+| 분야 | 범위 |
+|---|---|
+| `apps` | 만드는 앱 자체: 데스크탑·GUI 앱, 동영상 플레이어, 에디터, 그 앱의 요구사항·스택 결정·구조 |
+| `dev` | 개발 툴, AI(에이전트·스킬·LLM 활용 포함), 소프트웨어, 하드웨어 |
+
+지금 inbox 원본은 이렇게 나눈다.
+
+- `apps`: `rust-gui/`, `rust-video-player/`, `rust-video-player-native/`, `zed-like-editor/`
+- `dev`: `herdr/`, `ego-lite-guide/`, `ssh-tailscale-remote-terminal-guide/`, `youtube-pXTD2DJBlDo/`
+
+폴더는 D-1대로 그 분야의 첫 페이지를 저장할 때 만든다. 두 분야에 맞지 않는 원본이 오면 새 분야를 사람에게 묻는다.
+
+**근거**
+
+사용자 지시 "우선적으로 앱 / 딥러닝 / 개발 / 소프트웨어 등을 먼저 다루고 있습니다", "먼저 apps, dev (개발 툴, AI, 소프트웨어, 하드웨어) 2개로만 해 주세요" (2026-11-01).
+
+**배제한 대안**
+
+- **ai-agents·rust·dev-tools 3개, ai-agents·desktop-apps·dev-tools 3개, ai-agents·dev 2개** — leader가 제안했으나 사용자가 고르지 않았다. 배제.
+- **apps·deep-learning·dev·software 4개** — 사용자가 "먼저 2개로만"이라고 했다. deep-learning·software는 문서가 생길 때 다시 묻는다. 배제.
+
+---
+
 ## 미결 사항
 
 - 흐름을 한 번 돌려 볼 실제 질문과 그 분야. PLAN에서 정한다.
