@@ -9,6 +9,9 @@
 ## docs
 
 - [Herdr 멀티 에이전트 — 역할과 구성](docs/herdr-multi-agent-roles.md)
+- [ego lite — 코딩 에이전트용 브라우저](docs/ego-lite-browser-agents.md)
+- [Rust GUI 프레임워크 — 설치와 선택](docs/rust-gui-frameworks.md)
+- [SSH + Tailscale 원격 터미널](docs/ssh-tailscale-remote-terminal.md)
 
 ## web
 

@@ -26,6 +26,16 @@
   - 검증: R-1 `wiki/dev/` 바로 아래가 `index.md`와 소스 폴더뿐, 소스 폴더마다 페이지 1개. R-2 페이지별 `sources` 종류가 youtube=[youtube], docs=[docs], web=[docs, web]으로 폴더와 맞음. R-3 `raw/dev/` 폴더 이름 2개가 규칙에 맞음. R-4 `git diff --cached -M`에서 원본 10개 모두 R100(페이지 3개는 링크를 고쳐 R093~R097). R-5 소스별 제목 아래 링크와 폴더 목록이 셋 다 일치. R-6 상대 링크·`sources` 경로 깨짐 0.
   - 특이사항: inbox의 원본 3개는 아직 옛 이름이다(Phase 3에서 바꾼다). `specs/v0.1/` 문서 안의 옛 경로는 지난 버전이라 고치지 않았다.
 
+### Phase 3 — 남은 원본 3개 정리
+
+상태: 완료
+
+- **rust-gui·ego-lite-guide·ssh-tailscale 정리 → dev/docs** (2026-11-01)
+  - 무엇을 했나: D-8 이름으로 inbox 원본 3개를 `git mv`했다(`261101-docs-rust-gui`, `261101-docs-ego-lite-guide`, `261101-docs-ssh-tailscale-remote-terminal-guide`). leader가 세 원본(파일 11개)을 모두 읽고 `wiki/dev/docs/`에 페이지 3개를 썼다: `rust-gui-frameworks.md`(설치, UI 방식, 비교표, 고르는 방법, 프레임워크별 요점, 주의점), `ego-lite-browser-agents.md`(구조, Space·로그인, 설치, 에이전트별 설정, 요청 쓰는 법, 스크립트, 개인정보, 문제 해결), `ssh-tailscale-remote-terminal.md`(구성·순서, Tailscale, OpenSSH, 키, 공개키 등록, 비밀번호 차단, 안드로이드 앱, 접속, 전원, 보안 강화, 문제 해결). 분야 index의 `## docs` 아래에 세 줄을 넣고, 원본 3개를 `raw/dev/`로 옮겼다.
+  - 결과: `inbox/`에 `.gitkeep`만 남았다. `wiki/dev/docs/` 페이지 4개, `raw/dev/` 원본 5개.
+  - 검증: R-1 소스 폴더 3개 모두 페이지 있음. R-2 새 페이지 3개의 `sources`가 모두 docs 원본뿐이라 `docs/`에 맞음. R-3 `raw/dev/` 폴더 이름 5개가 모두 정규식에 맞음. R-4 이름 바꾸기·이동한 원본 11개 모두 R100. R-5 소스별 index와 폴더 목록 일치. R-6 링크·`sources` 깨짐 0, `[[` 없음.
+  - 특이사항: 세 원본은 기존 페이지와 겹치는 주제가 없어 R-10(보태기)·UC-5(묻기)는 일어나지 않았다. SSH 페이지에 herdr 페이지로 가는 관련 링크를 넣었다가, 위키의 herdr 페이지에는 원격 머신 내용이 없어 뺐다. 원본의 실행 검증 범위(rust-gui는 설치만, ssh는 미시험, ego-lite는 첫 동작만)를 각 페이지 첫머리에 적었다.
+
 ## 사용자 요청 작업
 
 ### v0.2 버전 INTENT 작성 (2026-11-01)
