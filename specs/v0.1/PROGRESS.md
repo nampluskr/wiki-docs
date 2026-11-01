@@ -56,7 +56,7 @@
 - 조치: 보류했던 SPEC 초안의 답 9가지를 사용자 지시("그대로 D-n으로 옮기기")로 옮겼다. 외부 원본(URL만), 지침 위치(WIKI.md + AGENTS.md 한 줄), 위키 검색(index → 본문), 답 형식(출처 구분·확인 후 저장), 기존 페이지(보태기·다르면 묻기), 새 페이지 status(draft)를 새로 물어 D-1~D-14로 썼다. 사용자 답("동시에")대로 SPEC.md를 R-1~R-13으로 다시 써 출처를 D-n으로 바꿨다.
 - 결과: `specs/v0.1/DECISIONS.md` 초안(D-1~D-14, 미결 3개), `specs/v0.1/SPEC.md` 초안(R-1~R-13)이 있다.
 - 검증: 결정마다 근거가 사용자 답이나 INTENT·AGENTS 문장인지, SPEC의 출처 D-n이 DECISIONS에 있는지 다시 읽어 확인했다.
-- 상태: 사람 확인 대기.
+- 상태: 완료. 이후 "미결 사항 결정, DECISIONS·SPEC 확정" 작업에서 두 문서를 확정했다.
 
 ### inbox 원본 종류(마크다운 폴더·유튜브) 반영 (2026-11-01)
 
@@ -82,7 +82,24 @@
 - 검증: R-1~R-14가 모두 어느 Phase의 대응에 있는지 확인했다.
 - 상태: 완료. 다음은 Phase 1.
 
+### scouter로 유튜브 영상 요약 (2026-11-01)
+
+- 요청: 유튜브 영상(https://youtu.be/1AlbTXb8oPc)을 서브 에이전트를 하나씩 실행해서 요약한다.
+- 조치: `wd-scouter-claude`에게 youtube-kit(cpu 환경)으로 자막을 받아 요약하라고 지시했다. 보고가 중간에 끊겨 같은 지시를 다시 보내지 않고 남은 부분만 이어서 보고하게 했다. 위키에는 저장하지 않았다.
+- 결과: 영상은 "Herdr로 LLM 오케스트레이션 액기스 모음"(코드팩토리, 약 21분)이다. 수동 자막이 없어 `auto:ko-orig` 자막으로 요약했다(고유명사 오인식은 scouter가 문맥으로 보정). 사용자가 기대한 YouTube 요약 스킬은 쓰이지 않았다. leader가 지시에 youtube-kit 방법을 지정했기 때문이다. scouter-codex·scouter-agy에는 지시하지 않았다.
+- 검증: `herdr agent read`로 scouter-claude 보고 전체(1~5항)를 읽었다. 받은 파일은 scratchpad의 `1AlbTXb8oPc.meta.json`, `1AlbTXb8oPc.auto.ko-orig.srt` 두 개이고 wiki-docs 안에는 아무것도 생기지 않았다고 scouter가 보고했다.
+- 특이사항: `Scripts\youtube-kit.exe`가 종료 코드 9009로 실행되지 않아 scouter가 `python -m youtube_kit.cli`로 우회했다. 원인은 확인하지 않았다.
+- 상태: 부분 완료(claude만). 이번 작업은 버전 INTENT 제외 범위 "여러 에이전트 분담"에 해당하는 사용자 요청 작업이다.
+
+### youtube 요약 스킬 이름 변경과 에이전트별 등록 (2026-11-01)
+
+- 요청: 스킬 이름을 `youtube-ask-summary`에서 `youtube-summary`로 바꾼다. claude·codex·agy 에이전트에게 각자 자신에게 등록하라고 지시하고, leader가 등록 결과를 확인한다.
+- 조치: 원본 폴더 `C:\Users\nampl\.agents\skills\youtube-ask-summary`를 `youtube-summary`로 바꾸고, SKILL.md의 `name`, 제목, 스크립트 경로를 새 이름으로 고쳤다. 스크립트 파일 이름 `ask-summary.mjs`는 그대로 두었다. scouter-claude에게 등록 지시를 보내려다 사용자가 중단했다.
+- 결과: 원본 이름 변경은 끝났다. 에이전트별 등록은 하지 않았다. `~/.claude/skills/youtube-ask-summary` 링크는 이제 없는 폴더를 가리킨다. leader 세션에는 `youtube-summary` 스킬이 보인다.
+- 검증: SKILL.md에서 `youtube-ask-summary` 문자열이 없어진 것을 grep으로 확인했다. 등록 결과는 확인하지 못했다(등록하지 않음).
+- 상태: 중단. 남은 것: 에이전트별 등록, 끊긴 claude 링크 정리, 등록 결과 확인.
+
 ## 버전 종료
 
 - 사용자 종료 판단: 진행 중.
-- 남은 것: 버전 INTENT → DECISIONS → SPEC(보류 초안 반영) → PLAN 순서로 작성. "GitHub 웹에서 inbox로 업로드"를 버전 문서에 반영.
+- 남은 것: PLAN Phase 1~4. 원격 저장소가 연결되어 있지 않아 push(D-14, Phase 4)를 하려면 원격 연결이 필요하다. youtube-summary 스킬의 에이전트별 등록.
