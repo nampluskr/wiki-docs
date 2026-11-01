@@ -185,6 +185,14 @@
 - 검증: `herdr agent read`로 두 scouter의 답 전체를 읽었다. 시험 뒤 `git -C D:/projects/wiki-docs status --short`가 비어 있어 위키가 바뀌지 않았다.
 - 특이사항: 쓰기 시험은 하지 않았다. 그래서 Codex `writable_roots`(Windows `elevated` 샌드박스)와 agy의 위키 파일 쓰기 승인 여부는 아직 모른다. agy는 셸 명령마다 승인을 물으므로, 승인을 줄이려면 ego lite처럼 `~/.gemini/antigravity-cli/settings.json`에 `command(regex:git -C D:/projects/wiki-docs .*)` 같은 허용 규칙을 넣는 방법이 있다(사람이 정할 일).
 
+### Tailscale 키 만료 끄기 절차 보강 (2026-11-01)
+
+- 요청: 데스크탑 원격 접속 환경을 위키 `wiki/dev/web/ssh-tailscale-remote-terminal.md` 순서대로 사용자가 직접 실행하던 중, 1단계 "키 만료 끄기"에서 사용자가 "홈페이지에 접속하니 영어로 표시됩니다"라고 했고, 이어 "키 만료 끄기 내용을 위키에 업데이트 해 주세요"라고 지시했다.
+- 조치: 페이지 2절 "키 만료 끄기"를 하위 목록으로 나눠 관리 콘솔이 영어로만 나온다는 점, 기기 목록 바로가기 주소 `https://login.tailscale.com/admin/machines`, 행 맨 오른쪽 `⋯` → Disable key expiry, 확인 표시 "Expiry disabled"를 넣었다. `sources`에 이 기록을 더했다.
+- 결과: 영어 화면에서 메뉴를 찾는 절차가 페이지에 생겼다.
+- 검증: 페이지를 다시 읽어 frontmatter와 2절 목록 형식을 확인했다. **바로가기 주소와 "Expiry disabled" 표시는 leader가 안내한 내용이고, 사용자 화면에서 확인됐는지는 아직 보고받지 않았다.**
+- 상태: 완료.
+
 ## 버전 종료
 
 - 사용자 종료 판단: 종료 (2026-11-01). 사용자 지시 "모든 과정을 종료하고 v0.2 마무리". Phase 4 최종 판정 R-1~R-9 충족.

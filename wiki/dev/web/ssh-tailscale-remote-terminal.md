@@ -2,6 +2,7 @@
 title: SSH + Tailscale 원격 터미널 (Windows 11 · Android)
 sources:
   - raw/web/261101-ssh-tailscale-remote-terminal-guide/ssh-tailscale-remote-terminal-guide.md
+  - specs/v0.2/PROGRESS.md
 updated: 2026-11-01
 tags: [ssh, openssh, tailscale, windows, android, remote]
 status: draft
@@ -32,7 +33,11 @@ status: draft
 
 - PC: tailscale.com/download에서 설치 → 트레이 아이콘 → Log in. 모든 기기를 **같은 계정**으로 로그인한다.
 - **Run unattended**(두 PC): Windows는 로그아웃하면 Tailscale도 끊긴다. 트레이 → Preferences → Run unattended, 또는 `tailscale up --unattended`.
-- **키 만료 끄기**(두 PC만): 기기 키가 기본 180일마다 만료된다. 관리 콘솔 Machines → PC의 `⋯` → Disable key expiry. 잃어버릴 수 있는 폰·태블릿은 만료를 켜 둔다.
+- **키 만료 끄기**(두 PC만): 기기 키가 기본 180일마다 만료된다. 잃어버릴 수 있는 폰·태블릿은 만료를 켜 둔다.
+  - 관리 콘솔은 영어로만 나온다. 메뉴 이름은 영어 그대로 찾는다.
+  - 주소창에 `https://login.tailscale.com/admin/machines`를 넣으면 기기 목록(Machines)으로 바로 간다. 로그인을 물으면 Tailscale을 설치할 때 쓴 계정으로 로그인한다.
+  - 목록에서 그 PC 행을 찾아 맨 오른쪽 `⋯` → **Disable key expiry**.
+  - 확인: PC 이름 아래에 **Expiry disabled**가 보인다.
 - 안드로이드: Play 스토어에서 설치 → 같은 계정 로그인 → **Always-on VPN**. 안드로이드는 VPN을 하나만 켤 수 있어서 다른 VPN을 켜면 Tailscale이 꺼진다.
 - 확인: `tailscale status`, `tailscale ip -4`. MagicDNS로 `desktop` 또는 `desktop.<tailnet>.ts.net`으로 접속한다. 관리 콘솔에서 기기 이름을 짧게 바꿔 두면 편하다.
 
