@@ -40,6 +40,22 @@
   - 특이사항: 처음에 셸 작업 폴더가 `inbox/youtube-pXTD2DJBlDo/` 안이라 그 폴더의 `git mv`가 Permission denied로 실패했고, 작업 폴더가 바뀐 뒤 다시 옮겼다. `raw/dev/herdr/herdr-multi-agent-guide.md`는 원래 위치 기준 링크(`herdr/README.md`)라 raw 안에서 깨지지만 원본이라 고치지 않았다. 유튜브 페이지는 영상 자막·요약만 근거로 했고 Anthropic 공식 문서는 확인하지 않았다고 페이지에 적었다. R-10(기존 페이지 보태기)은 기존 페이지가 없어 이번에도 일어나지 않았다.
   - 남은 것: `apps` 원본 4개(rust-gui, rust-video-player, rust-video-player-native, zed-like-editor)와 `dev` 원본 2개(ego-lite-guide, ssh-tailscale-remote-terminal-guide).
 
+### Phase 2 — 질문 흐름 한 번 (UC-2 → UC-4)
+
+상태: 완료 (2026-11-01). Phase 3 다음에 했다.
+
+- **PLAN 완료 조건 문구 수정** (2026-11-01)
+  - 무엇을 했나: 사용자가 추천안을 골라, Phase 2 완료 조건 "첫 분야 폴더와 페이지가 생겼다"를 "페이지가 생기거나 기존 페이지에 보태졌다. 분야 폴더가 없으면 확인받아 만들었다"로 고치고 이유를 PLAN에 적었다. 남은 inbox 원본 6개는 다음 버전으로 넘기기로 했다(Phase 4에서 기록).
+  - 결과: PLAN Phase 2 완료 조건이 순서 변경과 맞는다.
+  - 검증: PLAN을 다시 읽었다.
+  - 특이사항: 없음.
+
+- **질문 "herdr에서 하위 에이전트(claude)를 재시작하려면?"** (2026-11-01)
+  - 무엇을 했나: 사용자가 추천 질문을 골랐다. `git pull` → `wiki/index.md` → `wiki/dev/index.md` → `wiki/` 본문 grep(재시작·exit·MSYS)으로 위키를 먼저 찾아 `herdr-multi-agent-roles.md` 6절, `herdr-basics.md` 4·5절을 찾았다. 위키에 없는 종료 방법과 재시작 순서를 웹 검색(Claude Code 공식 문서, herdr.dev, Git Bash 경로 변환 자료)으로 보충했다. 답에서 위키 부분은 페이지 경로로, 외부 부분은 URL로 나누고 끝에 "위키에 추가할까요?"를 물었다. 사용자가 "위키에 추가, 겪은 일도 포함"이라고 해서 새 페이지를 만들지 않고 기존 `wiki/dev/herdr-basics.md`에 "6. 에이전트 재시작" 절을 보탰다(종료 키, Git Bash 경로 변환, agent start 참고, 겪은 일). `sources`에 URL 5개(확인 날짜 포함)와 `specs/v0.1/PROGRESS.md`를 넣었다.
+  - 결과: R-8(위키 먼저), R-9(출처 구분, 확인 후 저장), R-10(기존 페이지에 보태기), R-12(질문 흐름 한 번)가 처음으로 실제로 일어났다.
+  - 검증: 답의 순서(위키 결과 → 외부 검색 → 추가 질문)를 대화에서 확인했다. 보탠 절의 상대 링크가 실제 파일을 가리키는지 스크립트로 확인했다(깨짐 0). 기존 내용과 다른 점이 없어 UC-5(묻기)는 필요 없었다.
+  - 특이사항: "겪은 일"의 출처로 `specs/v0.1/PROGRESS.md`를 `sources`에 넣었다. D-17은 `sources`를 raw 경로나 URL로 정했으므로 이 항목은 규칙 밖이다. 사용자가 겪은 일을 넣으라고 해서 출처를 남기려고 넣었고, Phase 4에서 R-4 판정 때 다룬다.
+
 ## 사용자 요청 작업
 
 ### herdr scout-trio 환경 구성 (2026-11-01)

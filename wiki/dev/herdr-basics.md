@@ -5,6 +5,12 @@ sources:
   - raw/dev/herdr/BUILDING.md
   - raw/dev/herdr/OPERATING.md
   - raw/dev/herdr/herdr-multi-agent-guide.md
+  - https://code.claude.com/docs/en/interactive-mode (2026-11-01)
+  - https://wmedia.es/en/tips/claude-code-how-to-quit-session (2026-11-01)
+  - https://www.octavehq.com/post/claude-code-cli-cheatsheet-essential-commands (2026-11-01)
+  - https://herdr.dev/llms-full.txt (2026-11-01)
+  - https://docs.cloudbees.com/docs/cloudbees-cd-kb/latest/cloudbees-cd-kb/kbec-00420-stopping-path-conversion-for-git-bash (2026-11-01)
+  - specs/v0.1/PROGRESS.md
 updated: 2026-11-01
 tags: [herdr, multi-agent, terminal, claude, codex, agy]
 status: draft
@@ -95,7 +101,48 @@ runner 규칙:
 | claude 결과가 `agent read`로 앞부분까지 안 읽힘 | 결과가 길다 | 결과를 임시 Markdown 파일로 저장하게 하고 경로만 답하게 한다 |
 | agy 업데이트 실패 | 실행 중인 agy가 파일을 잠금 | agy 패널을 끝낸 뒤 `agy update` |
 
-## 6. 하지 않을 것
+## 6. 에이전트 재시작
+
+멈춘 에이전트나 새 스킬·설정을 읽혀야 하는 에이전트는 같은 패널·같은 이름·같은 설정으로 다시 띄운다. 이것은 승인된 구성 안의 일이고, 대리 응답 기록에 "구성 안 조치"로 남긴다([역할과 구성](herdr-multi-agent-roles.md) 6·7절).
+
+```bash
+# 1) 종료 — Ctrl+C 두 번이 가장 확실하다
+herdr agent send-keys <이름> ctrl+c ctrl+c
+#    또는 /exit. Git Bash에서는 경로 변환을 꺼야 한다
+MSYS_NO_PATHCONV=1 herdr agent prompt <이름> "/exit"
+
+# 2) 셸 프롬프트로 돌아왔는지 확인 (agent start는 빈 셸 패널에만 된다)
+herdr pane read <패널 ID> --source visible
+
+# 3) 같은 패널·이름·설정으로 다시 시작
+herdr agent start <이름> --kind claude --pane <패널 ID> --timeout 60000 -- --model sonnet --effort high
+```
+
+### claude 종료 키
+
+| 방법 | 동작 |
+| --- | --- |
+| `Ctrl+C` | 실행 중인 작업이 있으면 그 작업만 멈춘다. 없으면 첫 번째는 입력칸을 비우고, 두 번째에 종료한다 |
+| `Ctrl+D` | 첫 번째는 확인 안내, 800ms 안에 두 번째를 누르면 종료한다. 입력칸에 글이 있으면 커서 뒤 글자를 지운다 |
+| `/exit` | 세션을 끝내고 셸로 돌아간다. 대화는 남아 `claude --resume`으로 다시 열 수 있다 |
+
+### Git Bash의 경로 변환
+
+Git Bash(MSYS2)는 `/`로 시작하는 인자를 Windows 경로로 바꾼다. 그래서 `herdr agent prompt <이름> "/exit"`는 `/exit`가 아니라 `C:/Program Files/Git/exit` 같은 글로 들어갈 수 있다. 명령 앞에 `MSYS_NO_PATHCONV=1`을 붙이면 그 명령에서만 변환이 꺼진다. `//exit`처럼 슬래시를 두 번 쓰는 방법도 있지만 항상 통하지는 않는다.
+
+### agent start 참고
+
+- 기존 셸 패널이 있어야 하고, 패널을 만들거나 나누지 않는다.
+- 에이전트가 입력 준비가 됐다고 감지되면 성공으로 돌아온다. 기본 대기는 30초이고, `--timeout`은 3000ms 초과 300000ms 이하로 준다.
+- `--` 뒤의 인자는 그대로 실행 파일에 넘어간다.
+
+### 겪은 일 (2026-11-01, wiki-docs 워크스페이스)
+
+- `wd-scouter-claude`를 재시작하려고 `herdr agent prompt … "/exit"`와 `herdr pane run … "/exit"`를 `MSYS_NO_PATHCONV=1` 없이 보냈는데, 두 번 다 종료되지 않았다. 위 경로 변환이 원인으로 보이지만 다시 해 보지는 않았다.
+- `herdr agent send-keys wd-scouter-claude ctrl+c ctrl+c`로 종료됐고, 셸 프롬프트를 확인한 뒤 `agent start`로 같은 이름·설정으로 다시 띄웠다. 재시작한 뒤 새로 설치한 스킬(youtube-batch)이 인식됐다.
+- 그 뒤 scouter 입력칸에 보내지 않은 글이 남았을 때 `send-keys`로 보낸 Esc·Ctrl+U·Ctrl+C·Enter가 화면에 반영되지 않았다. 원인은 확인하지 못했고, 사람이 그 창에서 직접 Enter를 눌러 해결했다.
+
+## 7. 하지 않을 것
 
 - `herdr server stop` — 세션의 모든 패널이 같이 꺼진다.
 - 에이전트 안에서 bare `herdr` — TUI가 뜬다. `herdr <그룹>`으로 도움말을 본다.
