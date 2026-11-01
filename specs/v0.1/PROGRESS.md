@@ -91,14 +91,6 @@
 - 특이사항: `Scripts\youtube-kit.exe`가 종료 코드 9009로 실행되지 않아 scouter가 `python -m youtube_kit.cli`로 우회했다. 원인은 확인하지 않았다.
 - 상태: 부분 완료(claude만). 이번 작업은 버전 INTENT 제외 범위 "여러 에이전트 분담"에 해당하는 사용자 요청 작업이다.
 
-### youtube 요약 스킬 이름 변경과 에이전트별 등록 (2026-11-01)
-
-- 요청: 스킬 이름을 `youtube-ask-summary`에서 `youtube-summary`로 바꾼다. claude·codex·agy 에이전트에게 각자 자신에게 등록하라고 지시하고, leader가 등록 결과를 확인한다.
-- 조치: 원본 폴더 `C:\Users\nampl\.agents\skills\youtube-ask-summary`를 `youtube-summary`로 바꾸고, SKILL.md의 `name`, 제목, 스크립트 경로를 새 이름으로 고쳤다. 스크립트 파일 이름 `ask-summary.mjs`는 그대로 두었다. scouter-claude에게 등록 지시를 보내려다 사용자가 중단했다.
-- 결과: 원본 이름 변경은 끝났다. 에이전트별 등록은 하지 않았다. `~/.claude/skills/youtube-ask-summary` 링크는 이제 없는 폴더를 가리킨다. leader 세션에는 `youtube-summary` 스킬이 보인다.
-- 검증: SKILL.md에서 `youtube-ask-summary` 문자열이 없어진 것을 grep으로 확인했다. 등록 결과는 확인하지 못했다(등록하지 않음).
-- 상태: 중단. 남은 것: 에이전트별 등록, 끊긴 claude 링크 정리, 등록 결과 확인.
-
 ### GitHub public 저장소 생성과 push (2026-11-01)
 
 - 요청: GitHub에 public으로 저장소를 만들고 커밋·푸시한다.
@@ -110,4 +102,4 @@
 ## 버전 종료
 
 - 사용자 종료 판단: 진행 중.
-- 남은 것: PLAN Phase 1~4. youtube-summary 스킬의 에이전트별 등록.
+- 남은 것: PLAN Phase 1~4.
