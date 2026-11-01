@@ -57,6 +57,17 @@
   - 검증: R-1~R-6·R-8과 이어받은 요구는 스크립트로, R-7은 Phase 3 기록과 `inbox/` 목록으로 확인했다. 판정 직전 push(`162ad28`)로 로컬=원격.
   - 결과: R-1~R-8 충족, 미충족 없음.
   - 남은 판단: 버전 종료 여부. 사용자가 "아직 종료하지 않음"을 골랐다(2026-11-01). v0.2에서 더 할 일을 정한 뒤 종료한다.
+  - 이후: 이 판정은 Phase 5 이전 구조 기준이다. Phase 5 뒤 다시 판정한다.
+
+### Phase 5 — raw 소스 구분과 docs → web 통합
+
+상태: 완료
+
+- **raw를 분야/소스로, docs를 web으로** (2026-11-01)
+  - 무엇을 했나: 사용자 지시 "raw 폴더도 분야\소스로 구분"으로 D-9를 쓰고 `raw/dev/{docs,youtube}/`로 옮기던 중, 사용자 지시 "docs 소스도 웹에서 가져온 정보를 AI 에이전트가 정리한 것입니다. docs 소스를 제거하고 web으로 변경. 즉, 소스는 web, youtube 2개입니다."가 와서 D-10을 쓰고 방향을 바꿨다. `git mv`로 docs 원본 4개를 `raw/dev/web/261101-web-…/`로(폴더 이름의 소스도 web으로), 유튜브 원본을 `raw/dev/youtube/`로, `wiki/dev/docs/` 페이지 4개를 `wiki/dev/web/`으로 옮겼다. 페이지의 `sources`·raw 링크·페이지끼리 링크(`../docs/` → 같은 폴더)를 고치고, 분야 index를 `## youtube`·`## web`으로 다시 썼다. WIKI.md(1·2·3·6·7절), USECASES.md(UC-4·UC-6·UC-7), INTENT 범위, DECISIONS(D-9·D-10, D-1 표, 개정된 D-2~D-6·D-8에 개정 표시), SPEC(R-1·R-2·R-3·R-5·R-7), PLAN(Phase 5 추가, Phase 2·3 완료 조건에 당시 기준 표시)을 고쳤다.
+  - 결과: 소스는 `youtube`·`web` 두 개. `wiki/dev/web/` 5개, `wiki/dev/youtube/` 1개. `raw/dev/web/` 4개, `raw/dev/youtube/` 1개.
+  - 검증: R-1 `wiki/dev/`에 index와 `web/`·`youtube/`만. R-2 web 5개=[web], youtube 1개=[youtube]. R-3 `raw/dev/`에 `web/`·`youtube/`만, 원본 폴더 이름의 소스가 소스 폴더와 같음, inbox는 `.gitkeep`뿐. R-4 원본 21개 모두 R100(페이지 4개는 링크 수정으로 R092~R098). R-5 index 제목 2개, 링크와 폴더 목록 일치. R-6 링크·`sources` 깨짐 0. WIKI.md·USECASES.md·`wiki/`에 `docs` 소스 잔여 0(외부 URL·`docs/HERDR-*` 같은 원본 속 경로 제외).
+  - 특이사항: D-9를 먼저 `youtube·docs`로 썼다가 커밋 전에 `youtube·web`으로 고쳤다. "웹 정보 문서 원본은 raw/web에 둔다"가 v0.1 D-4("외부 검색 자료는 raw에 두지 않는다")와 부딪혀, 질문 중 웹 검색은 그대로 URL만 남긴다고 D-10에 나눠 적었다.
 
 ## 사용자 요청 작업
 

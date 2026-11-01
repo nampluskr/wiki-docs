@@ -1,10 +1,10 @@
 ---
 title: Herdr 기본 — 구조, 상태, 명령
 sources:
-  - raw/dev/261101-docs-herdr/README.md
-  - raw/dev/261101-docs-herdr/BUILDING.md
-  - raw/dev/261101-docs-herdr/OPERATING.md
-  - raw/dev/261101-docs-herdr/herdr-multi-agent-guide.md
+  - raw/dev/web/261101-web-herdr/README.md
+  - raw/dev/web/261101-web-herdr/BUILDING.md
+  - raw/dev/web/261101-web-herdr/OPERATING.md
+  - raw/dev/web/261101-web-herdr/herdr-multi-agent-guide.md
   - https://code.claude.com/docs/en/interactive-mode (2026-11-01)
   - https://wmedia.es/en/tips/claude-code-how-to-quit-session (2026-11-01)
   - https://www.octavehq.com/post/claude-code-cli-cheatsheet-essential-commands (2026-11-01)
@@ -18,7 +18,7 @@ status: draft
 
 # Herdr 기본 — 구조, 상태, 명령
 
-Herdr는 터미널 멀티플렉서다. 한 화면에서 Claude·Codex·agy 같은 AI 에이전트 여러 개를 띄우고, 에이전트 하나(leader)가 `herdr` 명령으로 다른 에이전트에게 일을 나눠 맡긴다. 역할을 나누고 구성하는 방법은 [Herdr 멀티 에이전트 — 역할과 구성](../docs/herdr-multi-agent-roles.md)에 있다.
+Herdr는 터미널 멀티플렉서다. 한 화면에서 Claude·Codex·agy 같은 AI 에이전트 여러 개를 띄우고, 에이전트 하나(leader)가 `herdr` 명령으로 다른 에이전트에게 일을 나눠 맡긴다. 역할을 나누고 구성하는 방법은 [Herdr 멀티 에이전트 — 역할과 구성](herdr-multi-agent-roles.md)에 있다.
 
 원본의 기준 환경: Herdr 0.9.5, Windows 11, 터미널 130×37.
 
@@ -103,7 +103,7 @@ runner 규칙:
 
 ## 6. 에이전트 재시작
 
-멈춘 에이전트나 새 스킬·설정을 읽혀야 하는 에이전트는 같은 패널·같은 이름·같은 설정으로 다시 띄운다. 이것은 승인된 구성 안의 일이고, 대리 응답 기록에 "구성 안 조치"로 남긴다([역할과 구성](../docs/herdr-multi-agent-roles.md) 6·7절).
+멈춘 에이전트나 새 스킬·설정을 읽혀야 하는 에이전트는 같은 패널·같은 이름·같은 설정으로 다시 띄운다. 이것은 승인된 구성 안의 일이고, 대리 응답 기록에 "구성 안 조치"로 남긴다([역할과 구성](herdr-multi-agent-roles.md) 6·7절).
 
 ```bash
 # 1) 종료 — Ctrl+C 두 번이 가장 확실하다
@@ -151,5 +151,5 @@ Git Bash(MSYS2)는 `/`로 시작하는 인자를 Windows 경로로 바꾼다. �
 
 ## 관련 페이지
 
-- [Herdr 멀티 에이전트 — 역할과 구성](../docs/herdr-multi-agent-roles.md)
+- [Herdr 멀티 에이전트 — 역할과 구성](herdr-multi-agent-roles.md)
 - [Claude 스킬 작성 규칙 7가지](../youtube/claude-skill-writing-rules.md) — herdr 스킬처럼 에이전트에 설치하는 스킬을 만들 때

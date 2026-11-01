@@ -38,7 +38,7 @@
 **대응** — R-1 · R-2 · R-3 · R-4 · R-5 · R-6 · D-8
 
 **완료 조건**
-- 페이지 3개가 `wiki/dev/{web,docs,youtube}/`에, 원본 2개가 `raw/dev/261101-…/`에 있다.
+- 페이지 3개가 `wiki/dev/{web,docs,youtube}/`에, 원본 2개가 `raw/dev/261101-…/`에 있다. (당시 기준. Phase 5에서 docs를 web으로 합치고 raw를 소스로 나눴다)
 - 옮긴 원본 파일이 모두 R100이다.
 - `wiki/dev/index.md`가 소스별 제목으로 바뀌었다.
 - 링크·`sources` 깨짐이 0이다.
@@ -54,9 +54,23 @@
 
 **완료 조건**
 - `inbox/`에 `.gitkeep`만 있다.
-- 세 원본이 `raw/dev/261101-docs-…/`에 R100으로 있다.
+- 세 원본이 `raw/dev/261101-docs-…/`에 R100으로 있다. (당시 기준, Phase 5에서 `raw/dev/web/261101-web-…/`로 옮김)
 - 각 원본을 `sources`로 가리키는 페이지가 소스 규칙(D-3)에 맞는 폴더에 있고, 분야 index에 들어 있다.
 - 기존 페이지와 겹치는 내용이 있으면 v0.1 D-11대로 보태거나 물었다. 보태서 소스가 섞이면 web으로 옮겼다.
+- 커밋되어 있다.
+
+---
+
+## Phase 5 — raw 소스 구분과 docs → web 통합
+
+**목적** — Phase 4 판정 뒤 사용자 지시로, raw를 `raw/<분야>/<소스>/`로 나누고(D-9) 소스 `docs`를 없애 `web`으로 합친다(D-10). 끝나면 Phase 4 판정을 다시 한다.
+
+**대응** — R-1 · R-2 · R-3 · R-4 · R-5 · R-6 · R-8 · D-9 · D-10
+
+**완료 조건**
+- `wiki/dev/`에 `youtube/`·`web/`만 있고, `docs/` 페이지 4개가 `web/`에 있다.
+- `raw/dev/`에 `youtube/`·`web/`만 있고, docs 원본 4개가 `raw/dev/web/261101-web-…/`로, 유튜브 원본이 `raw/dev/youtube/`로 R100으로 옮겨졌다.
+- 페이지의 `sources`·링크, 분야 index, WIKI.md·USECASES.md에 `docs` 소스가 남아 있지 않다.
 - 커밋되어 있다.
 
 ---

@@ -1,7 +1,7 @@
 ---
 title: ego lite — 코딩 에이전트용 브라우저 (Claude Code · Codex · agy)
 sources:
-  - raw/dev/261101-docs-ego-lite-guide/ego-lite-guide.md
+  - raw/dev/web/261101-web-ego-lite-guide/ego-lite-guide.md
 updated: 2026-11-01
 tags: [ego-lite, ego-browser, browser-automation, claude-code, codex, agy, windows]
 status: draft
@@ -130,4 +130,4 @@ await task.finish({ keep: [] });                    // 끝나면 한 번. 에이
 ## 관련 페이지
 
 - [Claude 스킬 작성 규칙 7가지](../youtube/claude-skill-writing-rules.md) — ego-browser처럼 에이전트에 설치하는 스킬의 작성 규칙
-- [Herdr 기본](../web/herdr-basics.md) — claude·codex·agy를 한 화면에서 함께 돌리는 환경
+- [Herdr 기본](herdr-basics.md) — claude·codex·agy를 한 화면에서 함께 돌리는 환경

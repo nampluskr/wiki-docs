@@ -1,7 +1,7 @@
 ---
 title: Claude 스킬 작성 규칙 7가지
 sources:
-  - raw/dev/261101-youtube-claude-skill-writing-rules
+  - raw/dev/youtube/261101-youtube-claude-skill-writing-rules
   - https://youtu.be/pXTD2DJBlDo (2026-11-01)
 updated: 2026-11-01
 tags: [claude, skill, agent, prompt, anthropic]

@@ -10,11 +10,11 @@
 
 **요구**
 
-페이지는 `wiki/<분야>/{youtube,docs,web}/` 아래에 둔다. 분야 폴더 바로 아래에는 `index.md`와 소스 폴더만 둔다. `apps` 분야는 두지 않는다.
+페이지는 `wiki/<분야>/{youtube,web}/` 아래에 둔다. 분야 폴더 바로 아래에는 `index.md`와 소스 폴더만 둔다. `apps` 분야는 두지 않는다.
 
 **정해진 결과**
 
-`wiki/<분야>/` 바로 아래에 `index.md`가 아닌 `.md` 파일이 없다. 소스 폴더 이름은 `youtube`·`docs`·`web` 중 하나이고, 소스 폴더마다 페이지가 하나 이상 있다. `wiki/apps/`가 없다.
+`wiki/<분야>/` 바로 아래에 `index.md`가 아닌 `.md` 파일이 없다. 소스 폴더 이름은 `youtube`·`web` 중 하나이고, 소스 폴더마다 페이지가 하나 이상 있다. `wiki/apps/`가 없다.
 
 **판정 방법**
 
@@ -22,7 +22,7 @@
 
 **출처**
 
-D-2 · D-7
+D-2 · D-7 · D-10
 
 ---
 
@@ -34,7 +34,7 @@ D-2 · D-7
 
 **정해진 결과**
 
-`youtube/` 페이지의 `sources`는 유튜브 원본 raw 경로·YouTube URL만, `docs/` 페이지는 docs 원본 raw 경로만 가리킨다(저장소 안 기록 문서 제외). 두 종류 이상이 섞인 페이지는 모두 `web/`에 있다.
+`youtube/` 페이지의 `sources`는 유튜브 원본 raw 경로·YouTube URL만 가리킨다(저장소 안 기록 문서 제외). 그 밖의 페이지(웹 정보만, 또는 두 소스가 섞임)는 모두 `web/`에 있다.
 
 **판정 방법**
 
@@ -50,11 +50,11 @@ D-3
 
 **요구**
 
-원본 폴더 이름은 `YYMMDD-{youtube|docs}-{title-in-kebab-case}`이고 날짜는 inbox에 넣은 날이다. 정리한 원본은 `raw/<분야>/` 바로 아래에 있다.
+원본 폴더 이름은 `YYMMDD-{youtube|web}-{title-in-kebab-case}`이고 날짜는 inbox에 넣은 날이다. 정리한 원본은 `raw/<분야>/<youtube|web>/` 아래에 있다(D-9·D-10).
 
 **정해진 결과**
 
-`inbox/`와 `raw/<분야>/` 바로 아래 폴더 이름이 모두 `^[0-9]{6}-(youtube|docs)-[a-z0-9-]+$`에 맞는다. `raw/` 바로 아래에는 분야 폴더만 있다.
+`inbox/` 바로 아래와 `raw/<분야>/<소스>/` 바로 아래 폴더 이름이 모두 `^[0-9]{6}-(youtube|web)-[a-z0-9-]+$`에 맞는다. `raw/` 바로 아래에는 분야 폴더만, `raw/<분야>/` 바로 아래에는 `youtube`·`web`만 있고, 원본 폴더 이름의 소스가 그 소스 폴더와 같다.
 
 **판정 방법**
 
@@ -62,7 +62,7 @@ D-3
 
 **출처**
 
-D-4 · D-5
+D-4 · D-5 · D-9 · D-10
 
 ---
 
@@ -90,7 +90,7 @@ D-5 · D-4
 
 **요구**
 
-`wiki/<분야>/index.md`에 페이지가 있는 소스만 `## youtube`·`## docs`·`## web` 제목을 두고, 그 아래에 그 소스 폴더의 페이지를 링크한다.
+`wiki/<분야>/index.md`에 페이지가 있는 소스만 `## youtube`·`## web` 제목을 두고, 그 아래에 그 소스 폴더의 페이지를 링크한다.
 
 **정해진 결과**
 
@@ -134,7 +134,7 @@ rust-gui, ego-lite-guide, ssh-tailscale-remote-terminal-guide를 새 이름으�
 
 **정해진 결과**
 
-`inbox/`에 `.gitkeep`만 있다. 세 원본이 `raw/dev/261101-docs-…/`에 있고, 각 원본을 `sources`로 가리키는 페이지가 `wiki/dev/` 아래에 있다.
+`inbox/`에 `.gitkeep`만 있다. 세 원본이 `raw/dev/web/261101-web-…/`에 있고, 각 원본을 `sources`로 가리키는 페이지가 `wiki/dev/` 아래에 있다.
 
 **판정 방법**
 

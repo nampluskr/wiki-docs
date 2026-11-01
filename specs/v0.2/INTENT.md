@@ -8,8 +8,9 @@
 
 - 목적: 위키를 분야와 자료 소스로 나누는 구조로 다시 정하고, inbox에 남은 원본을 그 구조로 위키에 반영한다.
 - 범위:
-  - 위키 구조 재정의. `wiki/<분야>/<소스>/`로 나누고, 소스는 `youtube`·`docs`·`web`이다.
+  - 위키 구조 재정의. `wiki/<분야>/<소스>/`로 나누고, 소스는 `youtube`·`web` 두 개다(같은 날 사용자 지시로 `docs`를 `web`에 합침).
   - inbox·raw 폴더 이름 규칙 재정의. `YYMMDD-{소스}-{title-in-kebab-case}`.
+  - raw도 `raw/<분야>/<소스>/`로 나누기(같은 날 사용자 지시로 추가).
   - 분야 정리. `apps` 분야를 두지 않는다(앱은 독립 레포에서 관리).
   - v0.1에서 만든 페이지 3개와 원본 2개를 새 구조·새 이름으로 옮기기.
   - inbox에 남은 원본 3개(rust-gui, ego-lite-guide, ssh-tailscale-remote-terminal-guide)를 새 구조로 `dev`에 반영하기.
