@@ -99,7 +99,7 @@ status: draft
    "$PY" -m youtube_kit.cli info '<URL>' -o 'inbox/youtube-<영상ID>'
    ```
 
-3. 자막을 골랐으면 트랙 목록을 사람에게 보여 주고, 고른 트랙만 받는다.
+3. 자막을 골랐으면 트랙을 이 순서로 고른다: **1순위 원본 언어, 2순위 한국어 번역.** 같은 언어면 수동(`manual:`)이 자동(`auto:`)보다 먼저다. 예) 한국어 영상 → `auto:ko-orig`. 두 순위의 트랙이 모두 없으면 트랙 목록을 사람에게 보여 주고 묻는다.
 
    ```bash
    "$PY" -m youtube_kit.cli subtitle '<URL>' --track <트랙ID> --format srt -o 'inbox/youtube-<영상ID>'

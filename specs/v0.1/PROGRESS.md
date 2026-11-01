@@ -22,6 +22,17 @@
   - 검증: `find wiki inbox raw -type f`로 세 파일, `AGENTS.md` 내용, `.gitignore`의 `.serena/`를 확인했다.
   - 특이사항: 없음.
 
+### Phase 3 — inbox 원본 정리 한 번씩
+
+상태: 진행 중. 사용자 지시("Phase 3 먼저 진행")로 Phase 2보다 먼저 한다(PLAN에 기록).
+
+- **유튜브 원본 inbox에 넣기** (2026-11-01)
+  - 무엇을 했나: 사람이 링크(https://youtu.be/pXTD2DJBlDo)와 "둘 다"(자막·요약)를 정했다. 사용자 지시로 `wd-scouter-claude`를 재시작해(`/exit`가 먹지 않아 Ctrl+C 두 번) 새 스킬을 읽게 한 뒤, youtube-batch 스킬로 YouTube 요약을, youtube-kit(`python -m youtube_kit.cli`)으로 메타와 자막을 받게 했다. 자막 트랙은 사람이 "1순위 원본 언어, 2순위 한국어 번역"으로 정해 `auto:ko-orig`를 받았다. 이 규칙을 D-15·R-14·WIKI.md 6절에 넣었다.
+  - 결과: `inbox/youtube-pXTD2DJBlDo/`에 `pXTD2DJBlDo.meta.json`, `pXTD2DJBlDo.auto.ko-orig.srt`, `summary.md`(맨 위 URL·날짜, 아래 YouTube 요약 원문)가 있다. 영상은 「앤트로픽 피셜: 클로드 스킬 만드는 규칙 바뀜 (공식 7가지)」(낭만빌더 김스듴, 11분 54초)이다. 수동 자막은 없고 자동 자막 158개가 있었다.
+  - 검증: 폴더의 파일 목록이 D-16 모양과 같고 영상·음성 파일이 없음을 `ls`로 확인했다. `summary.md` 앞부분을 읽어 URL·날짜 줄과 요약 원문을 확인했다. scouter-claude 보고에서 사용한 스킬(youtube-batch)과 명령을 확인했다.
+  - 특이사항: 자막을 지시하기 전에 scouter 창 입력칸에 보내지 않은 글("ko-orig 자막을 srt로 받아 줘")이 남아 있었고, leader가 보낸 Esc·Ctrl+U·Ctrl+C·Enter가 먹지 않았다. 사용자가 창에서 직접 보내 자막을 받았다. 여러 에이전트 분담은 버전 INTENT 제외 범위였지만 사용자 지시로 했다.
+  - 남은 것: 유튜브 원본의 분야 정하기와 위키 페이지 정리, raw/ 이동. 노트북의 마크다운 폴더(사람이 push 후 알려 줌).
+
 ## 사용자 요청 작업
 
 ### herdr scout-trio 환경 구성 (2026-11-01)

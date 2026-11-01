@@ -1,0 +1,2828 @@
+{
+  "id": "pXTD2DJBlDo",
+  "url": "https://www.youtube.com/watch?v=pXTD2DJBlDo",
+  "title": "앤트로픽 피셜: 클로드 스킬 만드는 규칙 바뀜 (공식 7가지)",
+  "channel": "낭만빌더 김스듴",
+  "channel_id": "UCrOkaaWRqbcV5CztsS_OqYQ",
+  "channel_url": "https://www.youtube.com/channel/UCrOkaaWRqbcV5CztsS_OqYQ",
+  "upload_date": "20261031",
+  "duration_s": 714,
+  "description": "클로드 스킬 만드는 규칙이 바뀌었어요. 클로드는 긴 참고 파일을 앞에 100줄만 보고 넘어갈 때가 많아서, 100번째 줄 아래에 쓴 규칙은 없는 거나 마찬가지예요. 앤트로픽 공식 가이드 「Skill 작성 모범 사례」에 바뀐 규칙 일곱 가지를 한국어 공식 문서 화면으로 하나씩 짚었어요.\n\n🎁 스킬 점검 프롬프트 (무료): https://sdk-kim-builds.com/guides/claude-skill-audit-prompt-7-rules/\n📸 인스타: https://www.instagram.com/sdk.kim.builds\n\n⏱ 챕터\n0:00 클로드는 긴 파일을 100줄만 읽어요\n0:48 1. 목차\n1:33 2. 자유도\n3:56 3. 모델별 테스트\n5:47 4. 참조는 한 단계만\n7:52 5. 체크리스트\n8:59 6. 스스로 고치는 루프\n9:47 7. 설치까지 적기\n\n📚 원본 자료\n앤트로픽 「Skill 작성 모범 사례」: https://platform.claude.com/docs/ko/agents-and-tools/agent-skills/best-practices\n\n본 영상은 Simon Scrapes님의 'Everything You Know About Skills IS OUTDATED' 영상(https://www.youtube.com/watch?v=e7TY56-yIvM)에서 구성 아이디어를 얻어 제작했습니다.\n\n썸네일 사진: Dario Amodei at TechCrunch Disrupt 2023 (TechCrunch, CC BY 2.0) https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01.jpg\n\n🎵 배경음악: YouTube 오디오 보관함 (On The Flip, Twinkle — The Grey Room / Density & Time · No Rush — Dyalla)\n\n#클로드 #Claude #클로드스킬 #앤트로픽 #AI자동화",
+  "tags": [],
+  "categories": [
+    "People & Blogs"
+  ],
+  "chapters": [
+    {
+      "start_s": 0,
+      "end_s": 48,
+      "title": "클로드는 긴 파일을 100줄만 읽어요"
+    },
+    {
+      "start_s": 48,
+      "end_s": 93,
+      "title": "1. 목차"
+    },
+    {
+      "start_s": 93,
+      "end_s": 236,
+      "title": "2. 자유도"
+    },
+    {
+      "start_s": 236,
+      "end_s": 347,
+      "title": "3. 모델별 테스트"
+    },
+    {
+      "start_s": 347,
+      "end_s": 472,
+      "title": "4. 참조는 한 단계만"
+    },
+    {
+      "start_s": 472,
+      "end_s": 539,
+      "title": "5. 체크리스트"
+    },
+    {
+      "start_s": 539,
+      "end_s": 587,
+      "title": "6. 스스로 고치는 루프"
+    },
+    {
+      "start_s": 587,
+      "end_s": 714,
+      "title": "7. 설치까지 적기"
+    }
+  ],
+  "language": "ko",
+  "availability": "public",
+  "age_limit": 0,
+  "is_live": false,
+  "fetched_at": "2026-11-01T18:44:36.918187+09:00",
+  "youtube_kit_version": "0.1.0",
+  "yt_dlp_version": "2026.08.19",
+  "video_formats": [
+    {
+      "id": "602",
+      "ext": "mp4",
+      "vcodec": "vp09.00.10.08",
+      "width": 256,
+      "height": 144,
+      "fps": 15.0,
+      "size": null
+    },
+    {
+      "id": "269",
+      "ext": "mp4",
+      "vcodec": "avc1.4D400C",
+      "width": 256,
+      "height": 144,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "160",
+      "ext": "mp4",
+      "vcodec": "avc1.4D400C",
+      "width": 256,
+      "height": 144,
+      "fps": 30,
+      "size": 1646340
+    },
+    {
+      "id": "603",
+      "ext": "mp4",
+      "vcodec": "vp09.00.11.08",
+      "width": 256,
+      "height": 144,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "278",
+      "ext": "webm",
+      "vcodec": "vp9",
+      "width": 256,
+      "height": 144,
+      "fps": 30,
+      "size": 4760049
+    },
+    {
+      "id": "394",
+      "ext": "mp4",
+      "vcodec": "av01.0.00M.08",
+      "width": 256,
+      "height": 144,
+      "fps": 30,
+      "size": 2436532
+    },
+    {
+      "id": "229",
+      "ext": "mp4",
+      "vcodec": "avc1.4D4015",
+      "width": 426,
+      "height": 240,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "133",
+      "ext": "mp4",
+      "vcodec": "avc1.4D4015",
+      "width": 426,
+      "height": 240,
+      "fps": 30,
+      "size": 3527787
+    },
+    {
+      "id": "604",
+      "ext": "mp4",
+      "vcodec": "vp09.00.20.08",
+      "width": 426,
+      "height": 240,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "242",
+      "ext": "webm",
+      "vcodec": "vp9",
+      "width": 426,
+      "height": 240,
+      "fps": 30,
+      "size": 7948606
+    },
+    {
+      "id": "395",
+      "ext": "mp4",
+      "vcodec": "av01.0.00M.08",
+      "width": 426,
+      "height": 240,
+      "fps": 30,
+      "size": 4231776
+    },
+    {
+      "id": "230",
+      "ext": "mp4",
+      "vcodec": "avc1.4D401E",
+      "width": 640,
+      "height": 360,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "134",
+      "ext": "mp4",
+      "vcodec": "avc1.4D401E",
+      "width": 640,
+      "height": 360,
+      "fps": 30,
+      "size": 7189459
+    },
+    {
+      "id": "605",
+      "ext": "mp4",
+      "vcodec": "vp09.00.21.08",
+      "width": 640,
+      "height": 360,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "243",
+      "ext": "webm",
+      "vcodec": "vp9",
+      "width": 640,
+      "height": 360,
+      "fps": 30,
+      "size": 18691407
+    },
+    {
+      "id": "396",
+      "ext": "mp4",
+      "vcodec": "av01.0.01M.08",
+      "width": 640,
+      "height": 360,
+      "fps": 30,
+      "size": 8802641
+    },
+    {
+      "id": "231",
+      "ext": "mp4",
+      "vcodec": "avc1.4D401F",
+      "width": 854,
+      "height": 480,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "135",
+      "ext": "mp4",
+      "vcodec": "avc1.4D401F",
+      "width": 854,
+      "height": 480,
+      "fps": 30,
+      "size": 11866225
+    },
+    {
+      "id": "606",
+      "ext": "mp4",
+      "vcodec": "vp09.00.30.08",
+      "width": 854,
+      "height": 480,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "244",
+      "ext": "webm",
+      "vcodec": "vp9",
+      "width": 854,
+      "height": 480,
+      "fps": 30,
+      "size": 28737136
+    },
+    {
+      "id": "397",
+      "ext": "mp4",
+      "vcodec": "av01.0.04M.08",
+      "width": 854,
+      "height": 480,
+      "fps": 30,
+      "size": 14243759
+    },
+    {
+      "id": "232",
+      "ext": "mp4",
+      "vcodec": "avc1.4D401F",
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "136",
+      "ext": "mp4",
+      "vcodec": "avc1.4D401F",
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "size": 16792021
+    },
+    {
+      "id": "609",
+      "ext": "mp4",
+      "vcodec": "vp09.00.31.08",
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "247",
+      "ext": "webm",
+      "vcodec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "size": 56867482
+    },
+    {
+      "id": "398",
+      "ext": "mp4",
+      "vcodec": "av01.0.05M.08",
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "size": 52078467
+    },
+    {
+      "id": "270",
+      "ext": "mp4",
+      "vcodec": "avc1.640028",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "137",
+      "ext": "mp4",
+      "vcodec": "avc1.640028",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "size": 92211614
+    },
+    {
+      "id": "614",
+      "ext": "mp4",
+      "vcodec": "vp09.00.40.08",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "size": null
+    },
+    {
+      "id": "248",
+      "ext": "webm",
+      "vcodec": "vp9",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "size": 118777651
+    },
+    {
+      "id": "399",
+      "ext": "mp4",
+      "vcodec": "av01.0.08M.08",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "size": 73846931
+    },
+    {
+      "id": "616",
+      "ext": "mp4",
+      "vcodec": "vp09.00.40.08",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "size": null
+    }
+  ],
+  "audio_formats": [
+    {
+      "id": "139-0",
+      "ext": "m4a",
+      "acodec": "mp4a.40.5",
+      "abr": 48.791,
+      "size": 4358089,
+      "language": "en-US",
+      "original": false,
+      "drc": false
+    },
+    {
+      "id": "139-1",
+      "ext": "m4a",
+      "acodec": "mp4a.40.5",
+      "abr": 48.793,
+      "size": 4357761,
+      "language": "ko",
+      "original": true,
+      "drc": false
+    },
+    {
+      "id": "249-0",
+      "ext": "webm",
+      "acodec": "opus",
+      "abr": 56.342,
+      "size": 5031942,
+      "language": "en-US",
+      "original": false,
+      "drc": false
+    },
+    {
+      "id": "250-0",
+      "ext": "webm",
+      "acodec": "opus",
+      "abr": 71.649,
+      "size": 6399008,
+      "language": "en-US",
+      "original": false,
+      "drc": false
+    },
+    {
+      "id": "249-1",
+      "ext": "webm",
+      "acodec": "opus",
+      "abr": 58.986,
+      "size": 5267335,
+      "language": "ko",
+      "original": true,
+      "drc": false
+    },
+    {
+      "id": "250-1",
+      "ext": "webm",
+      "acodec": "opus",
+      "abr": 76.038,
+      "size": 6790040,
+      "language": "ko",
+      "original": true,
+      "drc": false
+    },
+    {
+      "id": "140-0",
+      "ext": "m4a",
+      "acodec": "mp4a.40.2",
+      "abr": 129.48,
+      "size": 11564210,
+      "language": "en-US",
+      "original": false,
+      "drc": false
+    },
+    {
+      "id": "140-1",
+      "ext": "m4a",
+      "acodec": "mp4a.40.2",
+      "abr": 129.48,
+      "size": 11562739,
+      "language": "ko",
+      "original": true,
+      "drc": false
+    },
+    {
+      "id": "251-0",
+      "ext": "webm",
+      "acodec": "opus",
+      "abr": 128.212,
+      "size": 11450674,
+      "language": "en-US",
+      "original": false,
+      "drc": false
+    },
+    {
+      "id": "251-1",
+      "ext": "webm",
+      "acodec": "opus",
+      "abr": 145.175,
+      "size": 12963802,
+      "language": "ko",
+      "original": true,
+      "drc": false
+    }
+  ],
+  "subtitles": [
+    {
+      "id": "auto:ab",
+      "kind": "auto",
+      "key": "ab",
+      "name": "Abkhazian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:aa",
+      "kind": "auto",
+      "key": "aa",
+      "name": "Afar",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:af",
+      "kind": "auto",
+      "key": "af",
+      "name": "Afrikaans",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ak",
+      "kind": "auto",
+      "key": "ak",
+      "name": "Akan",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sq",
+      "kind": "auto",
+      "key": "sq",
+      "name": "Albanian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:am",
+      "kind": "auto",
+      "key": "am",
+      "name": "Amharic",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ar",
+      "kind": "auto",
+      "key": "ar",
+      "name": "Arabic",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:hy",
+      "kind": "auto",
+      "key": "hy",
+      "name": "Armenian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:as",
+      "kind": "auto",
+      "key": "as",
+      "name": "Assamese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ay",
+      "kind": "auto",
+      "key": "ay",
+      "name": "Aymara",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:az",
+      "kind": "auto",
+      "key": "az",
+      "name": "Azerbaijani",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:bn",
+      "kind": "auto",
+      "key": "bn",
+      "name": "Bangla",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ba",
+      "kind": "auto",
+      "key": "ba",
+      "name": "Bashkir",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:eu",
+      "kind": "auto",
+      "key": "eu",
+      "name": "Basque",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:be",
+      "kind": "auto",
+      "key": "be",
+      "name": "Belarusian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:bho",
+      "kind": "auto",
+      "key": "bho",
+      "name": "Bhojpuri",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:bs",
+      "kind": "auto",
+      "key": "bs",
+      "name": "Bosnian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:br",
+      "kind": "auto",
+      "key": "br",
+      "name": "Breton",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:bg",
+      "kind": "auto",
+      "key": "bg",
+      "name": "Bulgarian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:my",
+      "kind": "auto",
+      "key": "my",
+      "name": "Burmese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ca",
+      "kind": "auto",
+      "key": "ca",
+      "name": "Catalan",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ceb",
+      "kind": "auto",
+      "key": "ceb",
+      "name": "Cebuano",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:zh-Hans",
+      "kind": "auto",
+      "key": "zh-Hans",
+      "name": "Chinese (Simplified)",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:zh-Hant",
+      "kind": "auto",
+      "key": "zh-Hant",
+      "name": "Chinese (Traditional)",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:co",
+      "kind": "auto",
+      "key": "co",
+      "name": "Corsican",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:hr",
+      "kind": "auto",
+      "key": "hr",
+      "name": "Croatian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:cs",
+      "kind": "auto",
+      "key": "cs",
+      "name": "Czech",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:da",
+      "kind": "auto",
+      "key": "da",
+      "name": "Danish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:dv",
+      "kind": "auto",
+      "key": "dv",
+      "name": "Divehi",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:nl",
+      "kind": "auto",
+      "key": "nl",
+      "name": "Dutch",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:dz",
+      "kind": "auto",
+      "key": "dz",
+      "name": "Dzongkha",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:en-orig",
+      "kind": "auto",
+      "key": "en-orig",
+      "name": "English (Original)",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:en",
+      "kind": "auto",
+      "key": "en",
+      "name": "English",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:eo",
+      "kind": "auto",
+      "key": "eo",
+      "name": "Esperanto",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:et",
+      "kind": "auto",
+      "key": "et",
+      "name": "Estonian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ee",
+      "kind": "auto",
+      "key": "ee",
+      "name": "Ewe",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:fo",
+      "kind": "auto",
+      "key": "fo",
+      "name": "Faroese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:fj",
+      "kind": "auto",
+      "key": "fj",
+      "name": "Fijian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:fil",
+      "kind": "auto",
+      "key": "fil",
+      "name": "Filipino",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:fi",
+      "kind": "auto",
+      "key": "fi",
+      "name": "Finnish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:fr",
+      "kind": "auto",
+      "key": "fr",
+      "name": "French",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:gaa",
+      "kind": "auto",
+      "key": "gaa",
+      "name": "Ga",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:gl",
+      "kind": "auto",
+      "key": "gl",
+      "name": "Galician",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:lg",
+      "kind": "auto",
+      "key": "lg",
+      "name": "Ganda",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ka",
+      "kind": "auto",
+      "key": "ka",
+      "name": "Georgian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:de",
+      "kind": "auto",
+      "key": "de",
+      "name": "German",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:el",
+      "kind": "auto",
+      "key": "el",
+      "name": "Greek",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:gn",
+      "kind": "auto",
+      "key": "gn",
+      "name": "Guarani",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:gu",
+      "kind": "auto",
+      "key": "gu",
+      "name": "Gujarati",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ht",
+      "kind": "auto",
+      "key": "ht",
+      "name": "Haitian Creole",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ha",
+      "kind": "auto",
+      "key": "ha",
+      "name": "Hausa",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:haw",
+      "kind": "auto",
+      "key": "haw",
+      "name": "Hawaiian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:iw",
+      "kind": "auto",
+      "key": "iw",
+      "name": "Hebrew",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:hi",
+      "kind": "auto",
+      "key": "hi",
+      "name": "Hindi",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:hmn",
+      "kind": "auto",
+      "key": "hmn",
+      "name": "Hmong",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:hu",
+      "kind": "auto",
+      "key": "hu",
+      "name": "Hungarian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:is",
+      "kind": "auto",
+      "key": "is",
+      "name": "Icelandic",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ig",
+      "kind": "auto",
+      "key": "ig",
+      "name": "Igbo",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:id",
+      "kind": "auto",
+      "key": "id",
+      "name": "Indonesian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:iu",
+      "kind": "auto",
+      "key": "iu",
+      "name": "Inuktitut",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ga",
+      "kind": "auto",
+      "key": "ga",
+      "name": "Irish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:it",
+      "kind": "auto",
+      "key": "it",
+      "name": "Italian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ja",
+      "kind": "auto",
+      "key": "ja",
+      "name": "Japanese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:jv",
+      "kind": "auto",
+      "key": "jv",
+      "name": "Javanese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:kl",
+      "kind": "auto",
+      "key": "kl",
+      "name": "Kalaallisut",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:kn",
+      "kind": "auto",
+      "key": "kn",
+      "name": "Kannada",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:kk",
+      "kind": "auto",
+      "key": "kk",
+      "name": "Kazakh",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:kha",
+      "kind": "auto",
+      "key": "kha",
+      "name": "Khasi",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:km",
+      "kind": "auto",
+      "key": "km",
+      "name": "Khmer",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:rw",
+      "kind": "auto",
+      "key": "rw",
+      "name": "Kinyarwanda",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ko",
+      "kind": "auto",
+      "key": "ko",
+      "name": "Korean",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:kri",
+      "kind": "auto",
+      "key": "kri",
+      "name": "Krio",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ku",
+      "kind": "auto",
+      "key": "ku",
+      "name": "Kurdish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ky",
+      "kind": "auto",
+      "key": "ky",
+      "name": "Kyrgyz",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:lo",
+      "kind": "auto",
+      "key": "lo",
+      "name": "Lao",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:la",
+      "kind": "auto",
+      "key": "la",
+      "name": "Latin",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:lv",
+      "kind": "auto",
+      "key": "lv",
+      "name": "Latvian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ln",
+      "kind": "auto",
+      "key": "ln",
+      "name": "Lingala",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:lt",
+      "kind": "auto",
+      "key": "lt",
+      "name": "Lithuanian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:lua",
+      "kind": "auto",
+      "key": "lua",
+      "name": "Luba-Lulua",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:luo",
+      "kind": "auto",
+      "key": "luo",
+      "name": "Luo",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:lb",
+      "kind": "auto",
+      "key": "lb",
+      "name": "Luxembourgish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:mk",
+      "kind": "auto",
+      "key": "mk",
+      "name": "Macedonian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:mg",
+      "kind": "auto",
+      "key": "mg",
+      "name": "Malagasy",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ms",
+      "kind": "auto",
+      "key": "ms",
+      "name": "Malay",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ml",
+      "kind": "auto",
+      "key": "ml",
+      "name": "Malayalam",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:mt",
+      "kind": "auto",
+      "key": "mt",
+      "name": "Maltese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:gv",
+      "kind": "auto",
+      "key": "gv",
+      "name": "Manx",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:mi",
+      "kind": "auto",
+      "key": "mi",
+      "name": "Māori",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:mr",
+      "kind": "auto",
+      "key": "mr",
+      "name": "Marathi",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:mn",
+      "kind": "auto",
+      "key": "mn",
+      "name": "Mongolian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:mfe",
+      "kind": "auto",
+      "key": "mfe",
+      "name": "Morisyen",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ne",
+      "kind": "auto",
+      "key": "ne",
+      "name": "Nepali",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:new",
+      "kind": "auto",
+      "key": "new",
+      "name": "Newari",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:nso",
+      "kind": "auto",
+      "key": "nso",
+      "name": "Northern Sotho",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:no",
+      "kind": "auto",
+      "key": "no",
+      "name": "Norwegian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ny",
+      "kind": "auto",
+      "key": "ny",
+      "name": "Nyanja",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:oc",
+      "kind": "auto",
+      "key": "oc",
+      "name": "Occitan",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:or",
+      "kind": "auto",
+      "key": "or",
+      "name": "Odia",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:om",
+      "kind": "auto",
+      "key": "om",
+      "name": "Oromo",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:os",
+      "kind": "auto",
+      "key": "os",
+      "name": "Ossetic",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:pam",
+      "kind": "auto",
+      "key": "pam",
+      "name": "Pampanga",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ps",
+      "kind": "auto",
+      "key": "ps",
+      "name": "Pashto",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:fa",
+      "kind": "auto",
+      "key": "fa",
+      "name": "Persian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:pl",
+      "kind": "auto",
+      "key": "pl",
+      "name": "Polish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:pt",
+      "kind": "auto",
+      "key": "pt",
+      "name": "Portuguese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:pt-PT",
+      "kind": "auto",
+      "key": "pt-PT",
+      "name": "Portuguese (Portugal)",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:pa",
+      "kind": "auto",
+      "key": "pa",
+      "name": "Punjabi",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:qu",
+      "kind": "auto",
+      "key": "qu",
+      "name": "Quechua",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ro",
+      "kind": "auto",
+      "key": "ro",
+      "name": "Romanian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:rn",
+      "kind": "auto",
+      "key": "rn",
+      "name": "Rundi",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ru",
+      "kind": "auto",
+      "key": "ru",
+      "name": "Russian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sm",
+      "kind": "auto",
+      "key": "sm",
+      "name": "Samoan",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sg",
+      "kind": "auto",
+      "key": "sg",
+      "name": "Sango",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sa",
+      "kind": "auto",
+      "key": "sa",
+      "name": "Sanskrit",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:gd",
+      "kind": "auto",
+      "key": "gd",
+      "name": "Scottish Gaelic",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sr",
+      "kind": "auto",
+      "key": "sr",
+      "name": "Serbian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:crs",
+      "kind": "auto",
+      "key": "crs",
+      "name": "Seselwa Creole French",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sn",
+      "kind": "auto",
+      "key": "sn",
+      "name": "Shona",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sd",
+      "kind": "auto",
+      "key": "sd",
+      "name": "Sindhi",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:si",
+      "kind": "auto",
+      "key": "si",
+      "name": "Sinhala",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sk",
+      "kind": "auto",
+      "key": "sk",
+      "name": "Slovak",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sl",
+      "kind": "auto",
+      "key": "sl",
+      "name": "Slovenian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:so",
+      "kind": "auto",
+      "key": "so",
+      "name": "Somali",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:st",
+      "kind": "auto",
+      "key": "st",
+      "name": "Southern Sotho",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:es",
+      "kind": "auto",
+      "key": "es",
+      "name": "Spanish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:su",
+      "kind": "auto",
+      "key": "su",
+      "name": "Sundanese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sw",
+      "kind": "auto",
+      "key": "sw",
+      "name": "Swahili",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ss",
+      "kind": "auto",
+      "key": "ss",
+      "name": "Swati",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:sv",
+      "kind": "auto",
+      "key": "sv",
+      "name": "Swedish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:tg",
+      "kind": "auto",
+      "key": "tg",
+      "name": "Tajik",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ta",
+      "kind": "auto",
+      "key": "ta",
+      "name": "Tamil",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:tt",
+      "kind": "auto",
+      "key": "tt",
+      "name": "Tatar",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:te",
+      "kind": "auto",
+      "key": "te",
+      "name": "Telugu",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:th",
+      "kind": "auto",
+      "key": "th",
+      "name": "Thai",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:bo",
+      "kind": "auto",
+      "key": "bo",
+      "name": "Tibetan",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ti",
+      "kind": "auto",
+      "key": "ti",
+      "name": "Tigrinya",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:to",
+      "kind": "auto",
+      "key": "to",
+      "name": "Tongan",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ts",
+      "kind": "auto",
+      "key": "ts",
+      "name": "Tsonga",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:tn",
+      "kind": "auto",
+      "key": "tn",
+      "name": "Tswana",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:tum",
+      "kind": "auto",
+      "key": "tum",
+      "name": "Tumbuka",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:tr",
+      "kind": "auto",
+      "key": "tr",
+      "name": "Turkish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:tk",
+      "kind": "auto",
+      "key": "tk",
+      "name": "Turkmen",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:uk",
+      "kind": "auto",
+      "key": "uk",
+      "name": "Ukrainian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ur",
+      "kind": "auto",
+      "key": "ur",
+      "name": "Urdu",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ug",
+      "kind": "auto",
+      "key": "ug",
+      "name": "Uyghur",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:uz",
+      "kind": "auto",
+      "key": "uz",
+      "name": "Uzbek",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ve",
+      "kind": "auto",
+      "key": "ve",
+      "name": "Venda",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:vi",
+      "kind": "auto",
+      "key": "vi",
+      "name": "Vietnamese",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:war",
+      "kind": "auto",
+      "key": "war",
+      "name": "Waray",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:cy",
+      "kind": "auto",
+      "key": "cy",
+      "name": "Welsh",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:fy",
+      "kind": "auto",
+      "key": "fy",
+      "name": "Western Frisian",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:wo",
+      "kind": "auto",
+      "key": "wo",
+      "name": "Wolof",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:xh",
+      "kind": "auto",
+      "key": "xh",
+      "name": "Xhosa",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:yi",
+      "kind": "auto",
+      "key": "yi",
+      "name": "Yiddish",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:yo",
+      "kind": "auto",
+      "key": "yo",
+      "name": "Yoruba",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:zu",
+      "kind": "auto",
+      "key": "zu",
+      "name": "Zulu",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    },
+    {
+      "id": "auto:ko-orig",
+      "kind": "auto",
+      "key": "ko-orig",
+      "name": "Korean (Original)",
+      "formats": [
+        "json3",
+        "srv1",
+        "srv2",
+        "srv3",
+        "ttml",
+        "srt",
+        "vtt"
+      ]
+    }
+  ]
+}
