@@ -172,7 +172,18 @@
 - 결과: 레포 안 스킬·지침은 git으로 동기화되고, 컴퓨터마다 한 번 등록하면 pull만으로 갱신된다.
 - 검증: Junction 두 개가 레포 폴더를 가리키고, `skills.json`이 BOM 없는 JSON이며, `settings.json`이 JSON으로 읽히는 것을 확인했다. 이 세션에 `wiki` 스킬이 바로 인식됐다. 다른 레포(`D:\projects\youtube-kit`)에서 `claude -p`로 "위키에서 herdr 하위 에이전트 재시작 방법"을 물으니 `wiki/dev/web/herdr-basics.md` 6절을 읽고 위키 내용만으로 답했고 권한 거부는 0건이었다.
 - 특이사항: Git Bash에서 `claude -p "/wiki …"`로 보내면 `/wiki`가 `C:/Program Files/Git/wiki`로 바뀐다(경로 변환). 스킬 설명이 맞아 위키는 찾았다. youtube-kit 자체의 Stop hook(`progress-check.mjs`)이 답 뒤에 PROGRESS 기록을 계속 요구해 반복 출력이 났는데, wiki 스킬과는 관계없는 그 레포 설정이다. **Codex·agy 동작과 Codex `writable_roots`가 Windows `elevated` 샌드박스에서 적용되는지는 사용자가 시험을 멈춰 확인하지 않았다.** 노트북 등록은 사용자가 노트북에서 한다.
-- 상태: 완료(Codex·agy 확인은 남음).
+- 상태: 완료(Codex·agy 확인은 남음 → 아래 "Codex·agy에서 wiki 스킬 확인"에서 확인).
+
+### Codex·agy에서 wiki 스킬 확인 (2026-11-01)
+
+- 요청: agents 탭의 codex, agy를 재시작하고 wiki 스킬 테스트를 실행해 leader가 결과를 확인한다.
+- 조치: `wd-scouter-codex`·`wd-scouter-agy`를 Ctrl+C로 종료하고(agy는 세 번째 Ctrl+C에서 종료) 같은 창·이름·설정으로 `agent start`했다. 두 scouter(작업 폴더 `D:\projects`, wiki-docs 밖)에 같은 읽기 전용 질문 "위키에서 herdr 하위 에이전트를 재시작하는 방법을 3줄로, 위키는 고치지 말고, 사용한 스킬과 읽은 위키 파일을 적어"를 보냈다. Codex는 `$wiki`, agy는 `/wiki`(Git Bash 경로 변환을 막으려 `MSYS_NO_PATHCONV=1`)로 시작했다.
+- 결과:
+  - Codex: 스킬 `wiki`, `wiki/dev/web/herdr-basics.md`를 읽고 위키 6절 내용(종료 → 셸 확인 → 같은 설정으로 `agent start`)으로 답했다. 승인 창 없음.
+  - agy: 스킬 `wiki`, WIKI.md·index·`herdr-basics.md` 등 5개 파일을 읽고 같은 내용으로 답했다. 셸 명령 `git -C D:/projects/wiki-docs status --short`와 `git -C D:/projects/wiki-docs pull`에 승인 창이 떠서, leader가 읽기·동기화 명령이라 각각 "이번 한 번 허용"(1번)으로 대신 답했다. 설정에 저장하는 선택지는 고르지 않았다. 파일 읽기에는 승인 창이 없었다.
+  - 세 에이전트(claude·codex·agy) 모두 다른 폴더에서 wiki 스킬로 위키 내용만으로 답했다.
+- 검증: `herdr agent read`로 두 scouter의 답 전체를 읽었다. 시험 뒤 `git -C D:/projects/wiki-docs status --short`가 비어 있어 위키가 바뀌지 않았다.
+- 특이사항: 쓰기 시험은 하지 않았다. 그래서 Codex `writable_roots`(Windows `elevated` 샌드박스)와 agy의 위키 파일 쓰기 승인 여부는 아직 모른다. agy는 셸 명령마다 승인을 물으므로, 승인을 줄이려면 ego lite처럼 `~/.gemini/antigravity-cli/settings.json`에 `command(regex:git -C D:/projects/wiki-docs .*)` 같은 허용 규칙을 넣는 방법이 있다(사람이 정할 일).
 
 ## 버전 종료
 
