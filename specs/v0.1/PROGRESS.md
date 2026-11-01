@@ -82,15 +82,6 @@
 - 검증: R-1~R-14가 모두 어느 Phase의 대응에 있는지 확인했다.
 - 상태: 완료. 다음은 Phase 1.
 
-### scouter로 유튜브 영상 요약 (2026-11-01)
-
-- 요청: 유튜브 영상(https://youtu.be/1AlbTXb8oPc)을 서브 에이전트를 하나씩 실행해서 요약한다.
-- 조치: `wd-scouter-claude`에게 youtube-kit(cpu 환경)으로 자막을 받아 요약하라고 지시했다. 보고가 중간에 끊겨 같은 지시를 다시 보내지 않고 남은 부분만 이어서 보고하게 했다. 위키에는 저장하지 않았다.
-- 결과: 영상은 "Herdr로 LLM 오케스트레이션 액기스 모음"(코드팩토리, 약 21분)이다. 수동 자막이 없어 `auto:ko-orig` 자막으로 요약했다(고유명사 오인식은 scouter가 문맥으로 보정). 사용자가 기대한 YouTube 요약 스킬은 쓰이지 않았다. leader가 지시에 youtube-kit 방법을 지정했기 때문이다. scouter-codex·scouter-agy에는 지시하지 않았다.
-- 검증: `herdr agent read`로 scouter-claude 보고 전체(1~5항)를 읽었다. 받은 파일은 scratchpad의 `1AlbTXb8oPc.meta.json`, `1AlbTXb8oPc.auto.ko-orig.srt` 두 개이고 wiki-docs 안에는 아무것도 생기지 않았다고 scouter가 보고했다.
-- 특이사항: `Scripts\youtube-kit.exe`가 종료 코드 9009로 실행되지 않아 scouter가 `python -m youtube_kit.cli`로 우회했다. 원인은 확인하지 않았다.
-- 상태: 부분 완료(claude만). 이번 작업은 버전 INTENT 제외 범위 "여러 에이전트 분담"에 해당하는 사용자 요청 작업이다.
-
 ### GitHub public 저장소 생성과 push (2026-11-01)
 
 - 요청: GitHub에 public으로 저장소를 만들고 커밋·푸시한다.
