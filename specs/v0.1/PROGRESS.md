@@ -99,7 +99,15 @@
 - 검증: SKILL.md에서 `youtube-ask-summary` 문자열이 없어진 것을 grep으로 확인했다. 등록 결과는 확인하지 못했다(등록하지 않음).
 - 상태: 중단. 남은 것: 에이전트별 등록, 끊긴 claude 링크 정리, 등록 결과 확인.
 
+### GitHub public 저장소 생성과 push (2026-11-01)
+
+- 요청: GitHub에 public으로 저장소를 만들고 커밋·푸시한다.
+- 조치: 추적 파일에 토큰·비밀번호·이메일 같은 문자열이 없는지 확인한 뒤 `gh repo create nampluskr/wiki-docs --public --source . --remote origin --push`로 만들고 main을 push했다.
+- 결과: https://github.com/nampluskr/wiki-docs (public). 로컬 main이 `origin/main`을 추적한다.
+- 검증: `git branch -vv`에서 `[origin/main]`, `git status -sb`에서 `main...origin/main`을 확인했다.
+- 상태: 완료.
+
 ## 버전 종료
 
 - 사용자 종료 판단: 진행 중.
-- 남은 것: PLAN Phase 1~4. 원격 저장소가 연결되어 있지 않아 push(D-14, Phase 4)를 하려면 원격 연결이 필요하다. youtube-summary 스킬의 에이전트별 등록.
+- 남은 것: PLAN Phase 1~4. youtube-summary 스킬의 에이전트별 등록.
