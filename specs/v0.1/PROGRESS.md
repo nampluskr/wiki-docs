@@ -115,6 +115,15 @@
 - 검증: `git branch -vv`에서 `[origin/main]`, `git status -sb`에서 `main...origin/main`을 확인했다.
 - 상태: 완료.
 
+### docs/guides 문서를 inbox에 복사 (2026-11-01)
+
+- 요청: `D:\projects\docs`의 문서를 wiki-docs `inbox/`에 폴더별로 정리해 복사한다.
+- 조치: 단독 파일 처리("관련 폴더에 합치기")와 복사 범위("마크다운만")를 사람에게 물어 정했다. `docs/guides`의 폴더 5개(herdr, rust-gui, rust-video-player, rust-video-player-native, zed-like-editor)를 하위 구조 그대로 .md만 복사했다. 단독 파일은 `herdr-multi-agent-guide.md` → `inbox/herdr/`, `rust-video-player-youtube.md` → `inbox/rust-video-player/`에 넣고, `ego-lite-guide.md`·`ssh-tailscale-remote-terminal-guide.md`는 같은 이름의 폴더를 만들어 넣었다. 원본 폴더는 건드리지 않았다.
+- 결과: `inbox/`에 원본 폴더 7개, .md 120개가 있다. 위키 페이지 정리와 raw/ 이동은 하지 않았다(D-13, 요청할 때 한다).
+- 검증: 원본과 inbox의 .md 개수(120 = 120), 폴더별 `diff -rq`(.log·.png와 합친 단독 파일만 차이), 단독 파일 4개 `cmp`, inbox에 .md 아닌 파일이 없는 것을 확인했다.
+- 특이사항: 뺀 파일은 `research/reviews/agy-approvals.log` 3개와 `zed-like-editor/01-zed/assets/*.png` 2개다. 이 때문에 `zed-like-editor/01-zed/01-LAYOUT.md` 23·31행의 이미지 링크가 inbox 안에서 깨진다.
+- 상태: 완료.
+
 ## 버전 종료
 
 - 사용자 종료 판단: 진행 중.
