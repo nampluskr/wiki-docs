@@ -3,7 +3,8 @@ title: SSH + Tailscale 원격 터미널 (Windows 11 · Android)
 sources:
   - raw/web/261101-ssh-tailscale-remote-terminal-guide/ssh-tailscale-remote-terminal-guide.md
   - specs/v0.2/PROGRESS.md
-updated: 2026-11-02
+  - raw/web/261116-android-ssh-client-research/COMPARE.md
+updated: 2026-11-16
 tags: [ssh, openssh, tailscale, windows, android, remote]
 status: draft
 ---
@@ -142,13 +143,54 @@ Restart-Service sshd
 
 | 앱 | 가격 | 추천 대상 |
 | --- | --- | --- |
-| Termius | Starter 무료(동기화는 Pro) | 처음 쓰는 사람. Keychain에서 Ed25519 생성 → Hosts에 `desktop.<tailnet>.ts.net`·22·사용자·키 |
-| ConnectBot | 무료, 오픈소스 | 무료·오픈소스. Manage Pubkeys에서 생성 → `<user>@desktop.<tailnet>.ts.net:22` |
-| Termux | 무료, 오픈소스 | 명령행에 익숙한 사람. `pkg install openssh` 후 PC와 같은 `ssh-keygen`·`~/.ssh/config` |
+| ConnectBot | 무료, 인앱 결제 없음, 오픈소스(Apache-2.0) | **지금 쓰는 앱**(2026-11-16 태블릿). Termius와 같은 흐름(앱에서 Ed25519 생성 → 공개키 공유) |
+| Termius | Starter 무료(동기화는 Pro) | 2026-11 사용자의 무료 사용 기간이 끝나 ConnectBot으로 옮겼다. Starter 플랜 자체는 가격 페이지에 남아 있다(조사, 2026-11-16) |
+| Termux | 무료, 오픈소스(GPLv3) | 명령행에 익숙한 사람. `pkg install openssh` 후 PC와 같은 `ssh-keygen`·`~/.ssh/config`. Play 판은 실험판이라 F-Droid·GitHub 판을 쓴다 |
 
-JuiceSSH는 Play 스토어에서 확인되지 않아 새로 설치하지 않는다. 앱 메뉴 이름·키 형식은 버전마다 다르니 직접 확인한다.
+JuiceSSH는 Play 스토어에서 2025-12-11 내려갔고 마지막 릴리스가 2021-02라 쓰지 않는다(조사, 2026-11-16). 앱 메뉴 이름·키 형식은 버전마다 다르니 직접 확인한다.
 
 **(확인됨)** Termius(폰·태블릿): Keychain에서 Ed25519 키 생성 → 공개키 공유로 Taildrop 전송(5절) → 데스크탑에 등록 → Hosts에 `desktop`·22·사용자·키를 넣고 접속했다. 배터리 설정에서 Tailscale을 "제한 없음"으로 둔다.
+
+### 7.1 ConnectBot 설치와 설정
+
+2026-11-16 태블릿에서 아래 순서로 데스크탑에 접속했다. **(확인됨)**이 없는 줄은 조사 결과(웹 문서)이고 아직 시험하지 않았다. 폰도 같은 순서로 하되 **기기마다 키를 따로** 만든다(4절).
+
+1. **설치** **(확인됨)**: Play 스토어에서 `ConnectBot`(`org.connectbot`)을 설치한다. F-Droid에도 `1.11.1-oss`가 있다(Google Play 서비스 불필요). 2026-10-14에 1.11.1이 나왔다.
+2. **키 만들기** **(확인됨)**: `⋮` → **Manage Pubkeys** → `+` → 이름(태블릿은 `tab-connectbot`), 형식 **Ed25519**, 암호문구는 선택 → **Generate**. 암호문구를 걸면 **Load key on start**를 켜 두면 편하다.
+3. **공개키 보내기** **(확인됨)**: 키의 **공개키 내보내기** → 폴더에 저장 → 저장된 파일을 공유 → **Tailscale** → `desktop`. 데스크탑 `Downloads`에 `tab-connectbot.pub.txt`로 도착했다. Termius와 달리 **파일 이름과 줄 끝의 이름표(`tab-connectbot`)가 그대로** 들어 있다.
+4. **데스크탑 등록** **(확인됨)**: 관리자 PowerShell. 이름표가 이미 있으므로 덧붙이지 않는다.
+
+   ```powershell
+   $f = 'C:\ProgramData\ssh\administrators_authorized_keys'
+   $k = (Get-Content "$env:USERPROFILE\Downloads\tab-connectbot.pub.txt" -Raw).Trim()
+   Add-Content -Encoding ascii -LiteralPath $f -Value $k
+   icacls.exe $f /inheritance:r /grant:r "*S-1-5-32-544:F" "*S-1-5-18:F"
+   Get-Content $f | ForEach-Object { ($_ -split ' ')[0,2] -join ' ' }   # 키 종류와 이름표만 표시
+   ```
+
+5. **호스트 등록** **(확인됨)**: 새 호스트 화면에서 다섯 칸을 채우고, 인증에 2번의 키를 고른다.
+
+   | 칸 | 값 |
+   | --- | --- |
+   | 닉네임 | `desktop`(화면에 보일 이름) |
+   | 프로토콜 | `ssh` |
+   | 사용자 이름 | `<user>` |
+   | 호스트 | `desktop.<tailnet>.ts.net`(안 되면 `100.x.y.z`) |
+   | 포트 | `22` |
+
+6. **첫 접속** **(확인됨: 접속)**: 호스트 키 지문은 8절대로 대조한 뒤 수락한다.
+7. **다듬기**(조사):
+   - Settings → **Special keys always visible**을 켜면 Ctrl·Esc·Tab·화살표가 늘 보인다.
+   - 접속했는데 화면이 비면 호스트 편집에서 **Start shell session**이 켜져 있는지 본다(이슈 #1093의 흔한 원인).
+   - 백그라운드 유지는 설정의 **Persist connections**와 알림 권한, 배터리 최적화 예외로 한다.
+8. **정리**: Termius 키 줄은 ConnectBot을 며칠 써 보고 `administrators_authorized_keys`에서 그 이름표의 줄을 지운다(10절).
+
+ConnectBot에서 아직 확인하지 않은 것(조사, 2026-11-16):
+- **한글 입력**: 1.11.0 변경 내역에 "Improve IME input handling for Hangul"이 있고, 조합 중 글자가 빠지는 이슈 #2352는 2026-09-22에 닫혔다는 보고가 있다. 열린 이슈로 본 보고도 있었다. 삼성 키보드로 직접 확인한다.
+- TUI 마우스 트래킹(이슈 #2351), Android 14+ 터치패드 두 손가락 스크롤(#2549), 폴더블 접기·펴기.
+- 지원하지 않는 것: SFTP는 없다. 앱에 Mosh가 있지만 Windows에는 `mosh-server`가 없어 이 구성에서는 쓸 수 없다(9절).
+
+다른 후보(ZestSSH, Termphin, Shellwave, SSHBorg 등)와 네 에이전트의 비교는 [안드로이드 SSH 앱 조사](../../../raw/web/261116-android-ssh-client-research/COMPARE.md)에 있다.
 
 ## 8. 접속
 

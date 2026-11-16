@@ -219,6 +219,15 @@
 - 검증: 각 단계는 sshd 파일 로그(`DEBUG3`)와 앱 오류 문구(사용자 보고)로 확인했다. 원복은 파일 크기 2294바이트와 `curve25519-sha256` 재협상으로 확인했다. **Herdr Bridge의 Windows 미지원과 curve25519 실패 원인은 추정이다** — 문서 7절에 적었다.
 - 상태: 완료.
 
+### 안드로이드 SSH 앱을 Termius에서 ConnectBot으로 (2026-11-16)
+
+- 요청: Termius 무료 사용 기간이 끝나 사용자가 대체 앱 조사를 지시했다. 그 뒤 "위키 7절에 반영해 주세요", "위키에 설치 방법 포함해서 connectbot 관련 내용을 추가해 주세요"라고 지시했다(계획 밖, 사용자 요청 작업).
+- 조치: herdr `projects` 워크스페이스의 병렬 에이전트 4개(claude·codex·agy·opencode)가 같은 카드로 웹 조사를 했고, 리더가 비교표로 모았다. 카드·비교표·보고서 4개를 `raw/web/261116-android-ssh-client-research/`에 넣었다. `wiki/dev/web/ssh-tailscale-remote-terminal.md` 7절 앱 표를 고치고(ConnectBot을 지금 쓰는 앱으로, JuiceSSH 내려간 날짜, Termux 배포처), 7.1절 "ConnectBot 설치와 설정"을 새로 썼다. `sources`·`updated`를 고쳤다.
+- 결과: 위키 페이지 1개 갱신, raw 원본 폴더 1개 추가.
+- 검증: 태블릿에서 사용자가 설치 → Ed25519 키 생성 → 공개키 내보내기(폴더 저장 → 파일 공유 → Tailscale) → 데스크탑 등록 → 호스트 등록 → 접속까지 했다고 보고했다. 데스크탑 `Downloads`의 `tab-connectbot.pub.txt`가 `ssh-ed25519 … tab-connectbot` 한 줄인 것은 리더가 파일로 확인했다. 한글 입력, 특수키 막대, 백그라운드 유지, 호스트 키 지문 대조는 확인하지 않았다 — 페이지에 "조사"로 구분했다.
+- 기존 내용과 다른 점: 없음. Termius 줄은 지우지 않고 옮긴 사정을 적었고, JuiceSSH 판단("설치하지 않는다")은 그대로다.
+- 상태: 완료. 커밋은 했고 push는 사용자 확인 대기.
+
 ## 버전 종료
 
 - 사용자 종료 판단: 종료 (2026-11-01). 사용자 지시 "모든 과정을 종료하고 v0.2 마무리". Phase 4 최종 판정 R-1~R-9 충족.
